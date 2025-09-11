@@ -5,3 +5,7 @@
     Version: 1.0
     This is a custom built theme for the Highness.art publishing house.
 */
+
+body {
+    margin: 0px;
+}
