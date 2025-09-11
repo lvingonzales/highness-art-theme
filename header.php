@@ -15,7 +15,11 @@
     <?php wp_body_open(); ?>
     <div class="site">
         <header>
-            <a href="#">Site logo</a>
+            <a href="#">
+                <?php 
+                    echo wp_get_attachment_image(170, 'full', "", ["class" => "logo header", "alt"=>"highness logo"]);
+                ?>
+            </a>
             <nav>
                 <ul>
                     <li>Home</li>
