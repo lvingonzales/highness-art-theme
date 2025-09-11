@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/lvingonzales/highness-art-theme#readme",
   "devDependencies": {
+    "browser-sync": "^3.0.4",
     "sass": "^1.92.1"
   }
 }
