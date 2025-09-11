@@ -1,0 +1,25 @@
+{
+  "name": "highness-art-theme",
+  "version": "1.0.0",
+  "description": "Wordpress Classic Theme for Highness.art",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvingonzales/highness-art-theme.git"
+  },
+  "keywords": [
+    "Wordpress"
+  ],
+  "author": "Liam Gonzales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvingonzales/highness-art-theme/issues"
+  },
+  "homepage": "https://github.com/lvingonzales/highness-art-theme#readme",
+  "devDependencies": {
+    "sass": "^1.92.1"
+  }
+}
