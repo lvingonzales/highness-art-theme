@@ -1,5 +1,11 @@
 header {
-  max-height: 4rem;
+  max-height: 100px;
+  background-color: #1b1817;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  max-height: 100px;
 }
 
 /*# sourceMappingURL=header.css.map */

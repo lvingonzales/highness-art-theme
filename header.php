@@ -15,18 +15,29 @@
     <?php wp_body_open(); ?>
     <div class="site">
         <header>
-            <a href="#">
-                <?php 
-                    echo wp_get_attachment_image(170, 'full', "", ["class" => "logo header", "alt"=>"highness logo"]);
-                ?>
-            </a>
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Catalogue</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
-                </ul>
-            </nav>
+            <div class="container header">
+                <a href="#">
+                    <?php
+                        echo wp_get_attachment_image(
+                            170,
+                            "thumbnail", 
+                            "", 
+                            array(
+                                "class" => "logo header", 
+                                "alt"=>"highness logo",
+                                "sizes" => '(max-width: 600px) 80px, 160px'
+                            )
+                        );
+                    ?>
+                </a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Catalogue</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>Cart</li>
+                    </ul>
+                </nav>
+            </div>
         </header>
