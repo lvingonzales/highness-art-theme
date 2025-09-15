@@ -19,8 +19,7 @@ header .container a .logo-container {
   align-content: center;
 }
 header .container a .logo-container p {
-  font-size: 1.25rem;
-  max-width: 4rem;
+  font-size: 1.5rem;
   margin: auto 1rem;
   color: #dbbf6a;
   font-weight: 600;
