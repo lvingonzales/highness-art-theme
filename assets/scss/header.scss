@@ -42,8 +42,12 @@ header {
         display: flex;
         align-items: center;
 
-        &::before {
+        .nav-button {
+            border: none;
+            background-color: transparent;
             cursor: pointer;
+
+            &::after {
             content: "";
             background-image: url('../icons/menu-2.svg');
             background-size: 3rem 3rem;
@@ -51,7 +55,9 @@ header {
             height: 3rem;
             display: block;
             color: $primary-color;
+            }
         }
+        
     }
     .nav-container.mobile {
       background-color: white;
@@ -60,6 +66,13 @@ header {
       height: 100vh;
       top: -100vh;
       left: 0px;
+
+      transition: top 0.5s ease-in-out;
+
+      &.active {
+        top: 0px;
+      }
+
     }
   }
 }
