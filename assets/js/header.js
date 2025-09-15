@@ -45,7 +45,7 @@ class Header {
             }
             this.container.classList.add("mobile");
             this.nav.prepend(this.navButton);
-            this.nav.prepend(this.overlay);
+            this.container.prepend(this.overlay);
         } else {
             if(this.container.classList.contains("mobile")) {
                 this.container.classList.remove("mobile");
