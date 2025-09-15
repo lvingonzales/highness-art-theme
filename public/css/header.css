@@ -6,7 +6,7 @@ header {
 header .container {
   display: flex;
   justify-content: space-between;
-  max-height: 100px;
+  height: 100%;
   width: 100%;
   position: relative;
 }
@@ -28,6 +28,25 @@ header .container a .logo-container p {
 header .container a .logo-container .logo.header {
   width: auto;
   height: 100px;
+}
+header .nav-bar {
+  margin-right: 10px;
+}
+@media (max-width: 600px) {
+  header .nav-bar {
+    display: flex;
+    align-items: center;
+  }
+  header .nav-bar::before {
+    cursor: pointer;
+    content: "";
+    background-image: url("../icons/menu-2.svg");
+    background-size: 3rem 3rem;
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    color: #dbbf6a;
+  }
 }
 header .nav-bar .nav-container.mobile {
   background-color: white;
