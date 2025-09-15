@@ -17,26 +17,30 @@
         <header>
             <div class="container header">
                 <a href="#">
-                    <?php
-                        echo wp_get_attachment_image(
-                            170,
-                            "thumbnail", 
-                            "", 
-                            array(
-                                "class" => "logo header", 
-                                "alt"=>"highness logo",
-                                "sizes" => '(max-width: 600px) 80px, 160px'
-                            )
-                        );
-                    ?>
+                    <div class="logo-container">
+                        <?php
+                            echo wp_get_attachment_image(
+                                170,
+                                "full",
+                                "false",
+                                array(
+                                    "class" => "logo header",
+                                    "alt"=>"highness logo",
+                                )
+                            );
+                        ?>
+                        <p>
+                            Highness Publishing House
+                        </p>
+                    </div>
                 </a>
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>Catalogue</li>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
-                        <li>Cart</li>
+                <nav class="nav-bar">
+                    <ul class="nav-menu">
+                        <li class="nav-item">Home</li>
+                        <li class="nav-item">Catalogue</li>
+                        <li class="nav-item">About Us</li>
+                        <li class="nav-item">Contact Us</li>
+                        <li class="nav-item cart">Cart</li>
                     </ul>
                 </nav>
             </div>

@@ -21,4 +21,8 @@ if  (! function_exists('highness_theme_setup')) :
 endif;
 
 add_action ('wp_enqueue_scripts', 'highness_theme_setup');
+
+add_action ('after_theme_setup', function() {
+    add_image_size('logo-mobile', 80, 160, true);
+});
 ?>

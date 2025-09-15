@@ -1,16 +1,38 @@
 $bg-color: #1b1817;
+$primary-color : #dbbf6a;
 
 header {
+  height: 120px;
+  background-color: $bg-color;
+  display: flex;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
     max-height: 100px;
-    background-color: $bg-color;
+    width: 100%;
+    margin: auto 10px;
 
-    .container{
+    a {
+        text-decoration: none;
+      .logo-container {
+
         display: flex;
-        justify-content: space-between;
-        max-height: 100px;
+        align-content: center;
 
-        a>.logo.header {
-            
+        p{
+            font-size: 1.25rem;
+            max-width: 4rem;
+            margin: auto 5px;
+            color: $primary-color;
+            font-weight: 600;
         }
+
+        .logo.header {
+          width: auto;
+          height: 100px;
+        }
+      }
     }
+  }
 }

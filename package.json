@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:watch": "sass --watch assets/scss:public/css",
+    "sass:watch": "sass --watch assets/scss:public/css --no-source-map",
     "bs:sync": "browser-sync start --proxy http://localhost:8888 --files 'public/css/*.css, **/*.php'"
   },
   "repository": {
