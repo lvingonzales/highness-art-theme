@@ -35,13 +35,15 @@
                     </div>
                 </a>
                 <nav class="nav-bar">
-                    <ul class="nav-menu">
-                        <li class="nav-item">Home</li>
-                        <li class="nav-item">Catalogue</li>
-                        <li class="nav-item">About Us</li>
-                        <li class="nav-item">Contact Us</li>
-                        <li class="nav-item cart">Cart</li>
-                    </ul>
+                    <div class="nav-container">
+                        <ul class="nav-menu">
+                            <li class="nav-item">Home</li>
+                            <li class="nav-item">Catalogue</li>
+                            <li class="nav-item">About Us</li>
+                            <li class="nav-item">Contact Us</li>
+                            <li class="nav-item cart">Cart</li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>
