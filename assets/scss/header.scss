@@ -1,5 +1,5 @@
 $bg-color: #1b1817;
-$primary-color : #dbbf6a;
+$primary-color: #dbbf6a;
 
 header {
   height: 120px;
@@ -11,21 +11,21 @@ header {
     justify-content: space-between;
     max-height: 100px;
     width: 100%;
-    margin: auto 10px;
+    position: relative;
 
     a {
-        text-decoration: none;
+      text-decoration: none;
+      margin: 10px 10px;
       .logo-container {
-
         display: flex;
         align-content: center;
 
-        p{
-            font-size: 1.25rem;
-            max-width: 4rem;
-            margin: auto 5px;
-            color: $primary-color;
-            font-weight: 600;
+        p {
+          font-size: 1.25rem;
+          max-width: 4rem;
+          margin: auto 1rem;
+          color: $primary-color;
+          font-weight: 600;
         }
 
         .logo.header {
@@ -33,6 +33,22 @@ header {
           height: 100px;
         }
       }
+    }
+  }
+
+  .nav-bar {
+    @media (max-width: 600px) {
+        &::before {
+            
+        }
+    }
+    .nav-container.mobile {
+      background-color: white;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      top: -100vh;
+      left: 0px;
     }
   }
 }

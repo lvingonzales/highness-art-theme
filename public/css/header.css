@@ -8,10 +8,11 @@ header .container {
   justify-content: space-between;
   max-height: 100px;
   width: 100%;
-  margin: auto 10px;
+  position: relative;
 }
 header .container a {
   text-decoration: none;
+  margin: 10px 10px;
 }
 header .container a .logo-container {
   display: flex;
@@ -20,11 +21,19 @@ header .container a .logo-container {
 header .container a .logo-container p {
   font-size: 1.25rem;
   max-width: 4rem;
-  margin: auto 5px;
+  margin: auto 1rem;
   color: #dbbf6a;
   font-weight: 600;
 }
 header .container a .logo-container .logo.header {
   width: auto;
   height: 100px;
+}
+header .nav-bar .nav-container.mobile {
+  background-color: white;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: -100vh;
+  left: 0px;
 }

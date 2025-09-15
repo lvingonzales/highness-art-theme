@@ -30,7 +30,7 @@
                             );
                         ?>
                         <p>
-                            Highness Publishing House
+                            Highness Global Publishing House
                         </p>
                     </div>
                 </a>
