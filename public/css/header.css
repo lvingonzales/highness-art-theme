@@ -39,16 +39,19 @@ header .nav-bar {
   header .nav-bar .nav-button {
     border: none;
     background-color: transparent;
-    cursor: pointer;
+  }
+  header .nav-bar .nav-button.menu::after {
+    background-image: url("../icons/menu-2.svg");
+  }
+  header .nav-bar .nav-button.close::after {
+    background-image: url("../icons/x.svg");
   }
   header .nav-bar .nav-button::after {
     content: "";
-    background-image: url("../icons/menu-2.svg");
     background-size: 3rem 3rem;
     width: 3rem;
     height: 3rem;
     display: block;
-    color: #dbbf6a;
   }
 }
 header .nav-bar .nav-container.mobile {

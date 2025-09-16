@@ -8,6 +8,7 @@ class Header {
         this.navList = this.nav.querySelector(".nav-menu");
         this.navItems = Array.from(this.navList.querySelectorAll(".nav-item"));
         this.navButton = null;
+        this.closeButton = null;
         this.overlay = null;
         this.onResize = this.onResize.bind(this);
         this.onClick = this.onClick.bind(this);
@@ -19,9 +20,15 @@ class Header {
     init() {
         if(this.navButton == null) {
             this.navButton = document.createElement("button");
-            this.navButton.classList.add("nav-button");
+            this.navButton.classList.add("nav-button", "menu");
             this.navButton.addEventListener("click", this.onClick);
-            this.container.addEventListener("click", this.onClick);
+            // this.container.addEventListener("click", this.onClick);
+        }
+
+        if(this.closeButton== null) {
+            this.closeButton = document.createElement("button");
+            this.closeButton.classList.add("nav-button", "close");
+            this.closeButton.addEventListener("click", this.onClick);
         }
 
         if(this.overlay == null) {
@@ -45,6 +52,7 @@ class Header {
             }
             this.container.classList.add("mobile");
             this.nav.prepend(this.navButton);
+            this.container.prepend(this.closeButton);
             this.container.prepend(this.overlay);
         } else {
             if(this.container.classList.contains("mobile")) {
