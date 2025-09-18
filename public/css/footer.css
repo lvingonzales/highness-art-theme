@@ -43,6 +43,14 @@
 .footer-container .footer-body .footer-section.links .section .section-list li {
   font-size: 1rem;
   margin: 0.5rem 0px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .footer-container .footer-body .footer-section.links .section .section-list li svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 .footer-container .footer-body .footer-section.socials {
   display: flex;
