@@ -12,6 +12,11 @@ header {
     height: 100%;
     width: 100%;
     position: relative;
+    padding: 0px 10vw;
+
+    @media (max-width: 600px) {
+      padding: 0px 5vw;
+    }
 
     a {
       text-decoration: none;
@@ -37,32 +42,31 @@ header {
 
   .nav-bar {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
     @media (max-width: 600px) {
-        display: flex;
-        align-items: center;
+      .nav-button {
+        border: none;
+        background-color: transparent;
 
-        .nav-button {
-            border: none;
-            background-color: transparent;
-
-            &.menu::after{
-              background-image: url('../icons/menu-2.svg');
-            }
-
-            &.close::after {
-              background-image: url("../icons/x.svg");
-            }
-
-            &::after {
-            content: "";
-            background-size: 3rem 3rem;
-            width: 3rem;
-            height: 3rem;
-            display: block;
-            }
+        &.menu::after {
+          background-image: url("../icons/menu-2.svg");
         }
-        
+
+        &.close::after {
+          background-image: url("../icons/x.svg");
+        }
+
+        &::after {
+          content: "";
+          background-size: 3rem 3rem;
+          width: 3rem;
+          height: 3rem;
+          display: block;
+        }
+      }
     }
+
     .nav-container.mobile {
       background-color: white;
       position: absolute;
@@ -71,8 +75,41 @@ header {
       top: -100vh;
       left: 0px;
       z-index: 1000;
+      display: flex;
+      flex-direction: row-reverse;
 
       transition: top 0.5s ease-in;
+
+      .nav-button.close {
+        align-self: flex-start;
+      }
+
+      .nav-menu {
+        margin: 0px 0px;
+        flex: 1 0 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 5px;
+        gap: 0.5rem;
+
+
+        .nav-item {
+
+          svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: block;
+          }
+
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1.5rem;
+          height: 50px;
+          line-height: 50px;
+        }
+      }
 
       .nav-overlay {
         position: absolute;
@@ -89,10 +126,26 @@ header {
         top: 0vh;
 
         .nav-overlay {
-            opacity: 0.25;
+          opacity: 0.25;
         }
       }
+    }
 
+    .nav-container.desktop {
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+
+        .nav-item {
+          color: white;
+          font-size: 1.25rem;
+
+          svg {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

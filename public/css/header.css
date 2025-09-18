@@ -9,6 +9,12 @@ header .container {
   height: 100%;
   width: 100%;
   position: relative;
+  padding: 0px 10vw;
+}
+@media (max-width: 600px) {
+  header .container {
+    padding: 0px 5vw;
+  }
 }
 header .container a {
   text-decoration: none;
@@ -30,12 +36,10 @@ header .container a .logo-container .logo.header {
 }
 header .nav-bar {
   margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 600px) {
-  header .nav-bar {
-    display: flex;
-    align-items: center;
-  }
   header .nav-bar .nav-button {
     border: none;
     background-color: transparent;
@@ -62,7 +66,34 @@ header .nav-bar .nav-container.mobile {
   top: -100vh;
   left: 0px;
   z-index: 1000;
+  display: flex;
+  flex-direction: row-reverse;
   transition: top 0.5s ease-in;
+}
+header .nav-bar .nav-container.mobile .nav-button.close {
+  align-self: flex-start;
+}
+header .nav-bar .nav-container.mobile .nav-menu {
+  margin: 0px 0px;
+  flex: 1 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px;
+  gap: 0.5rem;
+}
+header .nav-bar .nav-container.mobile .nav-menu .nav-item svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+}
+header .nav-bar .nav-container.mobile .nav-menu .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  height: 50px;
+  line-height: 50px;
 }
 header .nav-bar .nav-container.mobile .nav-overlay {
   position: absolute;
@@ -79,4 +110,16 @@ header .nav-bar .nav-container.mobile.active {
 }
 header .nav-bar .nav-container.mobile.active .nav-overlay {
   opacity: 0.25;
+}
+header .nav-bar .nav-container.desktop .nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+header .nav-bar .nav-container.desktop .nav-menu .nav-item {
+  color: white;
+  font-size: 1.25rem;
+}
+header .nav-bar .nav-container.desktop .nav-menu .nav-item svg {
+  display: none;
 }
