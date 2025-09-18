@@ -23,6 +23,32 @@
             display: flex;
         }
 
+        .footer-section.links {
+            @media (max-width: 600px) {
+                flex-direction: column;
+            }
+            .section {
+                margin: 0px 1rem;
+                display: flex;
+                flex-direction: column;
+                .section-title {
+                    font-size: 1.25rem;
+                    border-top: 1px solid white;
+                    border-bottom: 1px solid white;
+                    padding: 0.5rem 0px;
+                }
+                .section-list {
+                    list-style: none;
+                    padding: 0px;
+                    margin: 5px 0px;
+                    li {
+                        font-size: 1rem;
+                        margin: 0.5rem 0px;
+                    }
+                }
+            }
+        }
+
         .footer-section.socials {
             display: flex;
             flex-direction: column;

@@ -5,9 +5,36 @@
         <div class="footer-title">Highness Global Publishing House</div>
         <div class="footer-body">
             <div class="footer-section links">
-                <div class="section"></div>
-                <div class="section"></div>
-                <div class="section"></div>
+                <div class="section contact">
+                    <span class="section-title">Contact Info</span>
+                    <ul class="section-list">
+                        <li>
+                            <span>
+                                1-(234)567-8912
+                            </span>
+                        </li>
+                        <li>1234 Spooner Street, Whoville, Where Province, Whenland</li>
+                        <li>thisisanemail@email.com</li>
+                    </ul>
+                </div>
+                <div class="section links">
+                    <span class="section-title">Section Two</span>
+                    <ul class="section-list">
+                        <li>Link 1</li>
+                        <li>Link 2</li>
+                        <li>Link 3</li>
+                        <li>Link 4</li>
+                    </ul>
+                </div>
+                <div class="section links">
+                    <span class="section-title">Section Two</span>
+                    <ul class="section-list">
+                        <li>Link 1</li>
+                        <li>Link 2</li>
+                        <li>Link 3</li>
+                        <li>Link 4</li>
+                    </ul>
+                </div>
             </div>
             <div class="footer-section socials">
                 <span class="socials-title">Follow Us</span>
