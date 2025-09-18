@@ -66,13 +66,23 @@ header .nav-bar .nav-container.mobile {
   top: 0;
   left: 0;
   z-index: 1000;
-  display: flex;
-  flex-direction: row-reverse;
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
 }
-header .nav-bar .nav-container.mobile .nav-button.close {
+header .nav-bar .nav-container.mobile .nav-content {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  height: 100%;
+}
+header .nav-bar .nav-container.mobile .nav-content .nav-button.close {
   align-self: flex-start;
+}
+header .nav-bar .nav-container.mobile .nav-content .logo-container {
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, -10%);
+  left: 50%;
 }
 header .nav-bar .nav-container.mobile .nav-menu {
   margin: 0px 0px;
@@ -111,6 +121,9 @@ header .nav-bar .nav-container.mobile.active {
 }
 header .nav-bar .nav-container.mobile.active .nav-overlay {
   opacity: 0.25;
+}
+header .nav-bar .nav-container.desktop .logo-container {
+  display: none;
 }
 header .nav-bar .nav-container.desktop .nav-menu {
   display: flex;
