@@ -5,6 +5,7 @@ class Header {
         this.header = document.querySelector("header");
         this.nav = this.header.querySelector("nav");
         this.container = this.nav.querySelector(".nav-container");
+        this.navContent = this.container.querySelector(".nav-content");
         this.navList = this.nav.querySelector(".nav-menu");
         this.navItems = Array.from(this.navList.querySelectorAll(".nav-item"));
         this.navButton = null;
@@ -52,7 +53,7 @@ class Header {
             }
             this.container.classList.add("mobile");
             this.nav.prepend(this.navButton);
-            this.container.prepend(this.closeButton);
+            this.navContent.prepend(this.closeButton);
             this.container.prepend(this.overlay);
         } else {
             if(this.container.classList.contains("mobile")) {
