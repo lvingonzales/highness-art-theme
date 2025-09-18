@@ -16,6 +16,12 @@ if  (! function_exists('highness_theme_setup')) :
             'highnessart_header_style',
             get_stylesheet_directory_uri() . '/public/css/header.css'
         );
+
+        wp_enqueue_style(
+            'highnessart_footer_style',
+            get_stylesheet_directory_uri() . '/public/css/footer.css'
+        );
+        
         
         wp_enqueue_script( 
             "highnessart_header_script", 

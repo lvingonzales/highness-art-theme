@@ -1,3 +1,26 @@
 .footer-container {
   background-color: #1b1817;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.footer-container .footer-title {
+  color: #dbbf6a;
+  font-size: 1.5rem;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .footer-container .footer-body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.footer-container .footer-body .footer-section.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-container .footer-body .footer-section.socials .socials-icons svg {
+  width: 3rem;
+  height: 3rem;
 }
