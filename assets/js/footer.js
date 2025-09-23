@@ -1,4 +1,4 @@
-const WINDOWBREAKPOINT = 600;
+const WINDOWBREAKPOINT = 900;
 let foo = [];
 class FooterDropdown {
   constructor(section) {
