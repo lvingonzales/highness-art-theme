@@ -29,11 +29,23 @@
   display: flex;
   flex-direction: column;
 }
-.footer-container .footer-body .footer-section.links .section .section-title {
-  font-size: 1.25rem;
+.footer-container .footer-body .footer-section.links .section .section-title-container {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   padding: 0.5rem 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-container .footer-body .footer-section.links .section .section-title-container svg {
+  display: none;
+}
+@media (max-width: 600px) {
+  .footer-container .footer-body .footer-section.links .section .section-title-container svg {
+    display: inline-block;
+  }
+}
+.footer-container .footer-body .footer-section.links .section .section-title-container .section-title {
+  font-size: 1.25rem;
 }
 .footer-container .footer-body .footer-section.links .section .section-list {
   list-style: none;
@@ -52,24 +64,29 @@
     height: 32px;
   }
 }
-.footer-container .footer-body .footer-section.socials {
+.footer-container .footer-body .footer-section.icons {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.footer-container .footer-body .footer-section.socials .socials-icons a:visited {
+.footer-container .footer-body .footer-section.icons .section.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-container .footer-body .footer-section.icons .section.socials .icons a:visited {
   color: white;
 }
-.footer-container .footer-body .footer-section.socials .socials-icons svg {
+.footer-container .footer-body .footer-section.icons .section.socials .icons svg {
   width: 2.5rem;
   height: 2.5rem;
 }
-.footer-container .footer-body .footer-section.logo {
-  justify-content: center;
-}
-.footer-container .footer-body .footer-section.logo .logo.footer {
+.footer-container .footer-body .footer-section.icons .logo .logo.footer {
   width: 80px;
   height: auto;
+}
+.footer-container .footer-body .footer-section.logo {
+  justify-content: center;
 }
 .footer-container .footer-end {
   display: flex;
