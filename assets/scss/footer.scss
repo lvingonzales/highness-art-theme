@@ -39,15 +39,19 @@
             .section-list {
             @media (max-width: 600px) {
               opacity: 1;
-              height: auto;
+              max-height: 200px;
+              overflow: hidden;
             }
           }
           }
           .section-list {
             @media (max-width: 600px) {
+              pointer-events: none;
               opacity: 0;
-              height: 0px;
-              transition: opacity 1.2s ease-in-out height 1s ease-in-out;
+              max-height: 0px;
+              transition: 
+                opacity 300ms ease-in-out,
+                max-height 500ms ease-in-out;
             }
           }
         }

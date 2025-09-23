@@ -1,5 +1,3 @@
-</div>
-
 <footer>
     <div class="footer-container">
         <div class="footer-title">Highness Global Publishing House</div>
@@ -94,6 +92,6 @@
     </div>
 </footer>
 <?php wp_footer(); ?>
-
+</div>
 </body>
 </html>

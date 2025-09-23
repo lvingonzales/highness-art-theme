@@ -2,4 +2,8 @@ body {
     margin: 0px;
 }
 
-
+.site {
+    display: flex;
+    flex-direction: column;
+    gap:  2rem;
+}

@@ -32,14 +32,16 @@
 @media (max-width: 600px) {
   .footer-container .footer-body .footer-section.links .section.dropdown.active .section-list {
     opacity: 1;
-    height: auto;
+    max-height: 200px;
+    overflow: hidden;
   }
 }
 @media (max-width: 600px) {
   .footer-container .footer-body .footer-section.links .section.dropdown .section-list {
+    pointer-events: none;
     opacity: 0;
-    height: 0px;
-    transition: opacity 1.2s ease-in-out height 1s ease-in-out;
+    max-height: 0px;
+    transition: opacity 300ms ease-in-out, max-height 500ms ease-in-out;
   }
 }
 .footer-container .footer-body .footer-section.links .section .section-title-container {
