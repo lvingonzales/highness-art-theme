@@ -2,4 +2,8 @@ body {
   margin: 0px;
 }
 
-/*# sourceMappingURL=primary.css.map */
+.site {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

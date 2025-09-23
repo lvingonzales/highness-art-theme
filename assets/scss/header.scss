@@ -1,5 +1,4 @@
-$bg-color: #1b1817;
-$primary-color: #dbbf6a;
+@use "./variables" as *;
 
 header {
   height: 120px;
