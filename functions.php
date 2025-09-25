@@ -48,3 +48,23 @@ add_action ('after_theme_setup', function() {
     add_image_size('logo-mobile', 80, 160, true);
 });
 
+if (! function_exists( 'highness_front_page_enqueues')) {
+    function highness_front_page_enqueues () {
+        if (is_front_page(  )) {
+
+            wp_enqueue_style(
+                'highness_featured_hero_style',
+                get_stylesheet_directory_uri(  ) . '/public/css/featured-hero.css'
+            );
+        }
+    }
+}
+
+add_action ('wp_enqueue_scripts', 'highness_front_page_enqueues');
+
+function highness_custom_image_sizes() {
+    add_image_size( 'hero-small', 600, 0, false );
+    add_image_size( 'hero-medium', 1200, 0, false );
+}
+
+add_action('after_theme_setup', 'highness_custom_image_sizes');
