@@ -56,6 +56,11 @@ if (! function_exists( 'highness_front_page_enqueues')) {
                 'highness_featured_hero_style',
                 get_stylesheet_directory_uri(  ) . '/public/css/featured-hero.css'
             );
+
+            wp_enqueue_style(
+                'highness_intro_text_style',
+                get_stylesheet_directory_uri(  ) . '/public/css/intro-text.css'
+            );
         }
     }
 }

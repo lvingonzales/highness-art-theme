@@ -14,20 +14,22 @@ body {
   background-color: #dbbf6a;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 36px;
-  }
+h1 {
+  font-size: clamp(36px, 7vw, 64px);
 }
 
-@media (max-width: 768px) {
-  h2 {
-    font-size: 24px;
-  }
+h2 {
+  font-size: clamp(24px, 5vw, 36px);
 }
 
-@media (max-width: 768px) {
-  p {
-    font-size: 18px;
-  }
+p {
+  font-size: clamp(18px, 5vw, 24px);
+}
+
+.container-lg {
+  max-width: 1920px;
+}
+
+.container-md {
+  max-width: 1200px;
 }

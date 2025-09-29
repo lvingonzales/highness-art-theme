@@ -1,0 +1,16 @@
+.intro {
+  display: flex;
+  justify-content: center;
+}
+.intro .container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 8px;
+}
+.intro .container .title {
+  text-align: center;
+}
+.intro .container .content {
+  font-weight: 500;
+  text-align: justify;
+}
