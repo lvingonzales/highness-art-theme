@@ -82,8 +82,8 @@
     width: 100%;
   }
   .featured-hero .content .container .card-container {
-    padding: 1rem;
-    gap: 1rem;
+    padding: max(1rem, 5vw);
+    gap: 5vw;
     border-bottom: 1px solid #bbbbbb;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1450980392);
   }
@@ -102,7 +102,7 @@
     font-size: 1.25rem;
   }
   .featured-hero .content .container .card-container .see-more {
-    width: 33%;
+    width: max(20%, 120px);
     aspect-ratio: 3/1;
     font-size: 1rem;
     font-weight: 700;
