@@ -4,6 +4,8 @@
     <?php get_template_part( 'template-parts/featured/featured-hero' ); ?>
 
     <?php get_template_part( 'template-parts/front-page/intro-text' ); ?>
+
+    <?php get_template_part( 'template-parts/front-page/literary-agency-section'); ?>
 </div>
 
 <?php get_footer(); ?>

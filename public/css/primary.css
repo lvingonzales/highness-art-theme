@@ -2,6 +2,18 @@ body {
   margin: 0px;
 }
 
+.w-1920 {
+  width: min(100%, 1920px);
+}
+
+.w-1440 {
+  width: min(100%, 1440px);
+}
+
+.w-1200 {
+  width: min(100%, 1200px);
+}
+
 .site {
   display: flex;
   flex-direction: column;
@@ -12,6 +24,7 @@ body {
   border-radius: 4px;
   border: none;
   background-color: #dbbf6a;
+  cursor: pointer;
 }
 
 h1 {
@@ -19,9 +32,42 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: clamp(24px, 5vw, 32px);
+}
+h2.sub-head {
+  font-weight: 400;
 }
 
 p {
   font-size: clamp(18px, 5vw, 24px);
+}
+p.sub-p {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.container.product {
+  width: 250px;
+  height: 450px;
+}
+
+.section-body {
+  display: flex;
+  justify-content: center;
+}
+
+.book-btn {
+  width: 100%;
+  height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
+  font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
 }

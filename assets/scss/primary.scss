@@ -4,6 +4,18 @@ body {
   margin: 0px;
 }
 
+.w-1920 {
+  width: $container-1920;
+}
+
+.w-1440 {
+  width: $container-1440;
+}
+
+.w-1200 {
+  width: $container-1200;
+}
+
 .site {
   display: flex;
   flex-direction: column;
@@ -14,6 +26,7 @@ body {
   border-radius: 4px;
   border: none;
   background-color: $primary-color;
+  cursor: pointer;
 }
 
 h1 {
@@ -21,9 +34,42 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(24px, 5vw, 36px);
+  font-size: clamp(24px, 5vw, 32px);
+  &.sub-head {
+    font-weight: 400;
+  }
 }
 
 p {
   font-size: clamp(18px, 5vw, 24px);
+  &.sub-p {
+    opacity: .8;
+    font-weight: 500;
+  }
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+}
+
+.container.product {
+  width: $container-product-width;
+  height: $container-product-height;
+}
+
+.section-body {
+  display: flex;
+  justify-content: center;
+}
+
+.book-btn {
+  width: 100%;
+  height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
+  font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
 }
