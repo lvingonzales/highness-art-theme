@@ -66,6 +66,11 @@ if (! function_exists( 'highness_front_page_enqueues')) {
                 'highness_lit_agency_section_style',
                 get_stylesheet_directory_uri(  ) . '/public/css/literary-agency-section.css'
             );
+
+            wp_enqueue_style(
+                'highness_testimonials_style',
+                get_stylesheet_directory_uri(  ) . '/public/css/testimonial.css'
+            );
         }
     }
 }

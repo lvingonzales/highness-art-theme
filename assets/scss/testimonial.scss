@@ -1,0 +1,49 @@
+@use "./variables" as *;
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+
+  .section-body {
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: 1200px) {
+    .section-body {
+      flex-direction: row;
+      gap: 16px;
+      height: 100%;
+    }
+    .vr {
+      border: 1px solid $black;
+      height: 100%;
+      flex: 1;
+    }
+  }
+
+  .container {
+    padding: $padding-lr;
+  }
+
+  .testimony-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(0.5rem, 0.5rem + 2vh, 1rem);
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  .testimony-footer {
+    .bold {
+      font-weight: 700;
+    }
+    p {
+      text-align: right;
+    }
+  }
+}
