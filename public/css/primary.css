@@ -25,11 +25,3 @@ h2 {
 p {
   font-size: clamp(18px, 5vw, 24px);
 }
-
-.container-lg {
-  max-width: 1920px;
-}
-
-.container-md {
-  max-width: 1200px;
-}

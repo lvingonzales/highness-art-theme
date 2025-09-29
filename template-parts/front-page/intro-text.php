@@ -5,7 +5,20 @@
 ?>
 
 <section class="intro">
-    <div class="container-md">
+    <div class="container">
+        <div class="image">
+            <?php
+                echo wp_get_attachment_image(
+                    212,
+                    "woocommerce-single",
+                    "false",
+                    array(
+                        "class" => "",
+                        "alt"=>"highness logo",
+                    )
+                );
+            ?>
+        </div>
         <div class="title">
             <h1> Welcome to Highness Publishing House </h1>
         </div>
