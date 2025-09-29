@@ -27,8 +27,9 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.featured-hero .content .container .card-container .text-content .tagline span {
+.featured-hero .content .container .card-container .text-content .tagline h2 {
   font-weight: 500;
+  margin: 0px;
 }
 .featured-hero .content .container .card-container .text-content .title-container .title {
   color: #00093B;
@@ -90,8 +91,7 @@
   .featured-hero .content .container .card-container .text-content {
     gap: 1rem;
   }
-  .featured-hero .content .container .card-container .text-content .tagline span {
-    font-size: 1.5rem;
+  .featured-hero .content .container .card-container .text-content .tagline h2 {
     font-weight: 400;
   }
   .featured-hero .content .container .card-container .text-content .title-container .title {

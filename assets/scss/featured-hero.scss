@@ -27,8 +27,9 @@
           flex-direction: column;
           gap: 0.5rem;
           .tagline {
-            span {
+            h2 {
               font-weight: 500;
+              margin: 0px;
             }
           }
           .title-container {
@@ -154,8 +155,7 @@
           .text-content {
             gap: 1rem;
             .tagline {
-              span {
-                font-size: 1.5rem;
+              h2 {
                 font-weight: 400;
               }
             }

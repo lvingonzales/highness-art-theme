@@ -23,7 +23,7 @@
             </div>
             <div class="card-container">
                 <div class="text-content">
-                    <div class="tagline"><span>Edible Recipes for a Sophisticated Happy Hour</span></div>
+                    <div class="tagline"><h2>Edible Recipes for a Sophisticated Happy Hour</h2></div>
                     <div class="title-container">
                         <p class="title">Stoned</p>
                         <p class="author">Ann Allchin</p>

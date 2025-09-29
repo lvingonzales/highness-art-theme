@@ -15,3 +15,21 @@ body {
   border: none;
   background-color: $primary-color;
 }
+
+h1 {
+  @media (max-width: 768px) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+p {
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+}
