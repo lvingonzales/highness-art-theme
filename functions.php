@@ -41,12 +41,7 @@ if  (! function_exists('highness_theme_setup')) :
     }
 
 endif;
-
 add_action ('wp_enqueue_scripts', 'highness_theme_setup');
-
-add_action ('after_theme_setup', function() {
-    add_image_size('logo-mobile', 80, 160, true);
-});
 
 if (! function_exists( 'highness_front_page_enqueues')) {
     function highness_front_page_enqueues () {
@@ -83,3 +78,8 @@ function highness_custom_image_sizes() {
 }
 
 add_action('after_theme_setup', 'highness_custom_image_sizes');
+
+add_action ('after_setup_theme', 'setup_woocommerce_support');
+
+
+
