@@ -80,6 +80,6 @@ function highness_custom_image_sizes() {
 add_action('after_theme_setup', 'highness_custom_image_sizes');
 
 add_action ('after_setup_theme', 'setup_woocommerce_support');
-
-
-
+function setup_woocommerce_support () {
+    add_theme_support( 'woocommerce' );
+}
