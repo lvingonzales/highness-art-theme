@@ -1,5 +1,6 @@
 <?php
 /**
+ * Cart - Empty
  * This is an override for Woocommerce.
  * Original: woocommerce/templates/cart/cart-empty.php
  * Last checked against WC version 10.2.2
