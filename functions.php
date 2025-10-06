@@ -21,6 +21,11 @@ if  (! function_exists('highness_theme_setup')) :
             'highnessart_footer_style',
             get_stylesheet_directory_uri() . '/public/css/footer.css'
         );
+
+        wp_enqueue_style(
+            'highnessart_content_product_style',
+            get_stylesheet_directory_uri() . '/public/css/content-product.css'
+        );
         
         
         wp_enqueue_script( 

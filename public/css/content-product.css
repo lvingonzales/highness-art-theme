@@ -1,0 +1,12 @@
+ul.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li.product {
+  width: 250px;
+  padding: 8px 24px !important;
+  border: 2px solid #dbbf6a;
+  border-radius: 10px;
+}
