@@ -67,6 +67,7 @@ header .nav-bar .nav-container.mobile {
   left: 0;
   z-index: 1000;
   transform: translateY(-100%);
+  visibility: hidden;
   transition: transform 0.3s ease-in-out;
 }
 header .nav-bar .nav-container.mobile .nav-content {
@@ -118,6 +119,7 @@ header .nav-bar .nav-container.mobile .nav-overlay {
 }
 header .nav-bar .nav-container.mobile.active {
   transform: translateY(0);
+  visibility: visible;
 }
 header .nav-bar .nav-container.mobile.active .nav-overlay {
   opacity: 0.25;
