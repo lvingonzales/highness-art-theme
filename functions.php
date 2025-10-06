@@ -41,12 +41,7 @@ if  (! function_exists('highness_theme_setup')) :
     }
 
 endif;
-
 add_action ('wp_enqueue_scripts', 'highness_theme_setup');
-
-add_action ('after_theme_setup', function() {
-    add_image_size('logo-mobile', 80, 160, true);
-});
 
 if (! function_exists( 'highness_front_page_enqueues')) {
     function highness_front_page_enqueues () {
@@ -77,9 +72,43 @@ if (! function_exists( 'highness_front_page_enqueues')) {
 
 add_action ('wp_enqueue_scripts', 'highness_front_page_enqueues');
 
-function highness_custom_image_sizes() {
-    add_image_size( 'hero-small', 600, 0, false );
-    add_image_size( 'hero-medium', 1200, 0, false );
+if (! function_exists('highness_cart_page_enqueues')) {
+    function highness_cart_page_enqueues () {
+        if (is_cart()) {
+            wp_enqueue_style(
+                'highness_cart_style',
+                get_stylesheet_directory_uri(  ) . '/public/css/cart.css'
+            );
+        }
+    }
 }
 
-add_action('after_theme_setup', 'highness_custom_image_sizes');
+add_action( 'wp_enqueue_scripts', 'highness_cart_page_enqueues');
+
+add_action ('after_setup_theme', 'setup_woocommerce_support');
+function setup_woocommerce_support () {
+    add_theme_support( 'woocommerce' );
+}
+
+function highness_svg( $icon, $class = '', $title = '', $return = false) {
+    $file = get_template_directory(  ) . '/public/icons/' . $icon. '.svg';
+
+    if (file_exists($file)) {
+        $svg = file_get_contents($file);
+
+        if ( $class ) {
+            $svg = preg_replace( '/<svg\b(.*?)>/', '<svg$1 class="' . esc_attr( $class ) . '">', $svg, 1 );
+        }
+
+        // Add a <title> for accessibility if provided.
+        if ( $title ) {
+            $svg = preg_replace( '/(<svg\b[^>]*>)/', '$1<title>' . esc_html( $title ) . '</title>', $svg, 1 );
+        }
+
+        if($return) {
+            return $svg;
+        }
+
+        echo $svg;
+    }
+}

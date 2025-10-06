@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/lvingonzales/highness-art-theme#readme",
   "devDependencies": {
+    "@prettier/plugin-php": "^0.24.0",
     "browser-sync": "^3.0.4",
+    "prettier": "^3.6.2",
     "sass": "^1.92.1"
   }
 }

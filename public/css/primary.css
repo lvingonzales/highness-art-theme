@@ -17,14 +17,23 @@ body {
 .site {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  padding: clamp(1.5rem, 5vw, 3rem);
 }
 
 .button {
-  padding: 10px 18px;
-  border-radius: 4px;
-  border: none;
-  background-color: #dbbf6a;
-  cursor: pointer;
+  padding: 0px !important;
+  border-radius: 4px !important;
+  border: none !important;
+  background-color: #dbbf6a !important;
+  cursor: pointer !important;
 }
 
 h1 {
@@ -44,6 +53,10 @@ p {
 p.sub-p {
   opacity: 0.8;
   font-weight: 500;
+}
+
+a, a:visited {
+  color: #1b1b1b;
 }
 
 .image {
@@ -70,4 +83,9 @@ p.sub-p {
   width: 100%;
   height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
   font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
+}
+
+.woocommerce {
+  width: min(100%, 1200px);
+  margin: 0px auto;
 }

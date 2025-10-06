@@ -19,14 +19,23 @@ body {
 .site {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  padding: $padding-lr;
 }
 
 .button {
-  padding: 10px 18px;
-  border-radius: 4px;
-  border: none;
-  background-color: $primary-color;
-  cursor: pointer;
+  padding: 0px !important;
+  border-radius: 4px !important;
+  border: none !important;
+  background-color: $primary-color !important;
+  cursor: pointer !important;
 }
 
 h1 {
@@ -46,6 +55,10 @@ p {
     opacity: .8;
     font-weight: 500;
   }
+}
+
+a, a:visited {
+  color: $black;
 }
 
 .image {
@@ -72,4 +85,9 @@ p {
   width: 100%;
   height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
   font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
+}
+
+.woocommerce {
+  width: $container-1200;
+  margin: 0px auto;
 }

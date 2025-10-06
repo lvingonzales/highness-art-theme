@@ -1,3 +1,4 @@
+</div>
 <footer>
     <div class="footer-container">
         <div class="footer-title">Highness Global Publishing House</div>

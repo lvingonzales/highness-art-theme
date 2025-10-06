@@ -77,3 +77,4 @@
                 </nav>
             </div>
         </header>
+        <div class="main-content container">
