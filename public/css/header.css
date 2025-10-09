@@ -1,9 +1,9 @@
-header {
+header.main {
   height: 120px;
   background-color: #1b1817;
   display: flex;
 }
-header .container {
+header.main .container {
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -12,45 +12,45 @@ header .container {
   padding: 0px 10vw;
 }
 @media (max-width: 600px) {
-  header .container {
+  header.main .container {
     padding: 0px 5vw;
   }
 }
-header .container a {
+header.main .container a {
   text-decoration: none;
   margin: 10px 10px;
 }
-header .container a .logo-container {
+header.main .container a .logo-container {
   display: flex;
   align-content: center;
 }
-header .container a .logo-container p {
+header.main .container a .logo-container p {
   font-size: 1.5rem;
   margin: auto 1rem;
   color: #dbbf6a;
   font-weight: 600;
 }
-header .container a .logo-container .logo.header {
+header.main .container a .logo-container .logo.header {
   width: auto;
   height: 100px;
 }
-header .nav-bar {
+header.main .nav-bar {
   margin-right: 10px;
   display: flex;
   align-items: center;
 }
 @media (max-width: 600px) {
-  header .nav-bar .nav-button {
+  header.main .nav-bar .nav-button {
     border: none;
     background-color: transparent;
   }
-  header .nav-bar .nav-button.menu::after {
+  header.main .nav-bar .nav-button.menu::after {
     background-image: url("../icons/menu-2.svg");
   }
-  header .nav-bar .nav-button.close::after {
+  header.main .nav-bar .nav-button.close::after {
     background-image: url("../icons/x.svg");
   }
-  header .nav-bar .nav-button::after {
+  header.main .nav-bar .nav-button::after {
     content: "";
     background-size: 3rem 3rem;
     width: 3rem;
@@ -58,7 +58,7 @@ header .nav-bar {
     display: block;
   }
 }
-header .nav-bar .nav-container.mobile {
+header.main .nav-bar .nav-container.mobile {
   background-color: white;
   position: fixed;
   width: 100vw;
@@ -70,22 +70,22 @@ header .nav-bar .nav-container.mobile {
   visibility: hidden;
   transition: transform 0.3s ease-in-out;
 }
-header .nav-bar .nav-container.mobile .nav-content {
+header.main .nav-bar .nav-container.mobile .nav-content {
   display: flex;
   flex-direction: row-reverse;
   position: relative;
   height: 100%;
 }
-header .nav-bar .nav-container.mobile .nav-content .nav-button.close {
+header.main .nav-bar .nav-container.mobile .nav-content .nav-button.close {
   align-self: flex-start;
 }
-header .nav-bar .nav-container.mobile .nav-content .logo-container {
+header.main .nav-bar .nav-container.mobile .nav-content .logo-container {
   position: absolute;
   bottom: 0;
   transform: translate(-50%, -10%);
   left: 50%;
 }
-header .nav-bar .nav-container.mobile .nav-menu {
+header.main .nav-bar .nav-container.mobile .nav-menu {
   margin: 0px 0px;
   flex: 1 0 0;
   list-style: none;
@@ -94,12 +94,12 @@ header .nav-bar .nav-container.mobile .nav-menu {
   padding: 0px 5px;
   gap: 0.5rem;
 }
-header .nav-bar .nav-container.mobile .nav-menu .nav-item svg {
+header.main .nav-bar .nav-container.mobile .nav-menu .nav-item svg {
   width: 2.5rem;
   height: 2.5rem;
   display: block;
 }
-header .nav-bar .nav-container.mobile .nav-menu .nav-item {
+header.main .nav-bar .nav-container.mobile .nav-menu .nav-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -107,7 +107,7 @@ header .nav-bar .nav-container.mobile .nav-menu .nav-item {
   height: 50px;
   line-height: 50px;
 }
-header .nav-bar .nav-container.mobile .nav-overlay {
+header.main .nav-bar .nav-container.mobile .nav-overlay {
   position: absolute;
   top: 100vh;
   z-index: 10;
@@ -117,25 +117,25 @@ header .nav-bar .nav-container.mobile .nav-overlay {
   opacity: 0;
   pointer-events: none;
 }
-header .nav-bar .nav-container.mobile.active {
+header.main .nav-bar .nav-container.mobile.active {
   transform: translateY(0);
   visibility: visible;
 }
-header .nav-bar .nav-container.mobile.active .nav-overlay {
+header.main .nav-bar .nav-container.mobile.active .nav-overlay {
   opacity: 0.25;
 }
-header .nav-bar .nav-container.desktop .logo-container {
+header.main .nav-bar .nav-container.desktop .logo-container {
   display: none;
 }
-header .nav-bar .nav-container.desktop .nav-menu {
+header.main .nav-bar .nav-container.desktop .nav-menu {
   display: flex;
   list-style: none;
   gap: 1rem;
 }
-header .nav-bar .nav-container.desktop .nav-menu .nav-item {
+header.main .nav-bar .nav-container.desktop .nav-menu .nav-item {
   color: white;
   font-size: 1.25rem;
 }
-header .nav-bar .nav-container.desktop .nav-menu .nav-item svg {
+header.main .nav-bar .nav-container.desktop .nav-menu .nav-item svg {
   display: none;
 }

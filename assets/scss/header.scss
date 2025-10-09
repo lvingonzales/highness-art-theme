@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-header {
+header.main {
   height: 120px;
   background-color: $bg-color;
   display: flex;

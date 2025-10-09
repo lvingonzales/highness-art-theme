@@ -24,10 +24,6 @@ body {
   flex: 1;
 }
 
-.container {
-  padding: clamp(1.5rem, 5vw, 3rem);
-}
-
 .button {
   padding: 0px !important;
   border-radius: 4px !important;
@@ -83,9 +79,4 @@ a, a:visited {
   width: 100%;
   height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
   font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
-}
-
-.woocommerce {
-  width: min(100%, 1200px);
-  margin: 0px auto;
 }

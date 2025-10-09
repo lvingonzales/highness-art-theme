@@ -27,7 +27,6 @@ body {
 }
 
 .container {
-  padding: $padding-lr;
 }
 
 .button {
@@ -85,9 +84,4 @@ a, a:visited {
   width: 100%;
   height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
   font-size: clamp(1rem, 1rem + 1vw, 1.25rem);
-}
-
-.woocommerce {
-  width: $container-1200;
-  margin: 0px auto;
 }

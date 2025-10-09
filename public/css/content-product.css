@@ -5,8 +5,32 @@ ul.products {
 }
 
 li.product {
-  width: 250px;
-  padding: 8px 24px !important;
+  width: 250px !important;
   border: 2px solid #dbbf6a;
+}
+li.product {
   border-radius: 10px;
+}
+li.product .inner-container {
+  margin: 8px 16px;
+}
+li.product .inner-container a.button {
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+}
+li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link img {
+  margin: 0px !important;
+}
+li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link h2 {
+  font-size: 24px;
+  padding-bottom: 0px !important;
+  font-weight: 500;
+}
+li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link span.price {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #1b1b1b;
+  opacity: 0.5;
 }

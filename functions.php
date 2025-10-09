@@ -117,3 +117,20 @@ function highness_svg( $icon, $class = '', $title = '', $return = false) {
         echo $svg;
     }
 }
+
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+add_action('woocommerce_shop_loop_item_title', 'product_title_and_author', 10);
+
+function product_title_and_author () {
+    global $product;
+
+    $author_name = $product->get_attribute( 'pa_book-author' );
+
+    echo '<h2 class="woocommerce-loop-product__title">';
+    echo esc_html($product->get_name());
+    echo '</h2>';
+
+    if ($author_name) {
+        echo '<span class="product-author"> ' . esc_html( $author_name ) . '</span>';
+    }
+}

@@ -14,7 +14,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div class="site">
-        <header>
+        <header class="main">
             <div class="container header">
                 <a href="#">
                     <div class="logo-container">
