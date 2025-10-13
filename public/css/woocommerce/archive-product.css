@@ -1,0 +1,15 @@
+@media (min-width: 1200px) {
+  #shop-container {
+    display: flex;
+  }
+  #shop-container .woof_redraw_zone {
+    flex-direction: column;
+    min-width: 20vw;
+  }
+  #shop-container .woof_redraw_zone div {
+    width: 100%;
+  }
+  #shop-container .products {
+    flex: 1 1 0;
+  }
+}

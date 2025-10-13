@@ -24,7 +24,7 @@ if  (! function_exists('highness_theme_setup')) :
 
         wp_enqueue_style(
             'highnessart_content_product_style',
-            get_stylesheet_directory_uri() . '/public/css/content-product.css'
+            get_stylesheet_directory_uri() . '/public/css/woocommerce/content-product.css'
         );
         
         
@@ -43,6 +43,13 @@ if  (! function_exists('highness_theme_setup')) :
             '1.0.0', 
             true
         );
+
+        if (is_shop() ) {
+            wp_enqueue_style(
+                "highnessart_shop_style",
+                get_stylesheet_directory_uri(  ) . "/public/css/woocommerce/archive-product.css"
+            );
+        }
     }
 
 endif;
@@ -82,7 +89,7 @@ if (! function_exists('highness_cart_page_enqueues')) {
         if (is_cart()) {
             wp_enqueue_style(
                 'highness_cart_style',
-                get_stylesheet_directory_uri(  ) . '/public/css/cart.css'
+                get_stylesheet_directory_uri(  ) . '/public/css/woocommerce/cart.css'
             );
         }
     }

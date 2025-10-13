@@ -36,7 +36,9 @@ do_action( 'woocommerce_before_main_content' );
  * @hooked woocommerce_product_taxonomy_archive_header - 10
  */
 do_action( 'woocommerce_shop_loop_header' );
-
+?>
+<div id="shop-container">
+	<?php
 if ( woocommerce_product_loop() ) {
 
 	/**
@@ -79,7 +81,9 @@ if ( woocommerce_product_loop() ) {
 	 */
 	do_action( 'woocommerce_no_products_found' );
 }
-
+?>
+</div>
+<?php
 /**
  * Hook: woocommerce_after_main_content.
  *
