@@ -1,20 +1,11 @@
 @use "../variables" as *;
 
 @media (min-width: 1200px) {
-    #shop-container {
-        display: flex;
+  #shop-container {
+    display: flex;
 
-        .woof_redraw_zone {
-            flex-direction: column;
-            min-width: 20vw;
-
-            div {
-                width: 100%;
-            }
-        }
-
-        .products {
-            flex: 1 1 0;
-        }
+    .products {
+      flex: 1 1 0;
     }
+  }
 }

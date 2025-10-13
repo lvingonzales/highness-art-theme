@@ -1,0 +1,43 @@
+@use "../variables" as *;
+
+body .irs-bar {
+  background-color: $primary-color !important;
+}
+
+.irs-handle {
+  border-color: $primary-color !important;
+}
+
+span.irs-from,
+span.irs-to {
+  background-color: $primary-color !important;
+}
+
+span.irs-from::before,
+span.irs-to::before {
+    border-top-color: $primary-color !important;
+}
+
+.woof.woof_sid.woof_sid_auto_shortcode {
+    border: none !important;
+}
+.woof_text_search_container.woof_container.woof_container_woof_text {
+    overflow: visible !important;
+
+    .woof_husky_txt-input:focus {
+        outline: 2px solid $primary-color;
+    }
+}
+
+@media (min-width: 1200px) {
+    .woof.woof_sid.woof_sid_auto_shortcode {
+      min-width: clamp(300px, 20vw, 400px);
+      .woof_redraw_zone {
+        flex-direction: column;
+
+        .woof_container {
+          width: 100%;
+        }
+      }
+    }
+}
