@@ -164,4 +164,8 @@ add_action('woocommerce_before_shop_loop', function () {
     remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 }, 1);
 
+add_action('woocommerce_before_main_content', function () {
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+}, 1);
+
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');

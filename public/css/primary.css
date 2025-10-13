@@ -97,7 +97,7 @@ a, a:visited {
   justify-content: center;
 }
 
-.book-btn {
+.book-btn, .button {
   width: 100%;
   height: clamp(1.5rem, 1.5rem + 2vh, 3rem);
   font-size: clamp(1rem, 1rem + 1vw, 1.25rem);

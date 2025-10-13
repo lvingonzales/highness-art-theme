@@ -28,13 +28,21 @@ span.irs-to::before {
 }
 
 @media (min-width: 1200px) {
-  .woof.woof_sid.woof_sid_auto_shortcode {
-    min-width: clamp(300px, 20vw, 400px);
+  .woof.woof_sid.woof_sid_auto_shortcode,
+  .woof {
+    grid-area: 1/1/2/2;
+    width: 100%;
+    padding: 0px;
   }
-  .woof.woof_sid.woof_sid_auto_shortcode .woof_redraw_zone {
+  .woof.woof_sid.woof_sid_auto_shortcode .woof_redraw_zone,
+  .woof .woof_redraw_zone {
     flex-direction: column;
   }
-  .woof.woof_sid.woof_sid_auto_shortcode .woof_redraw_zone .woof_container {
+  .woof.woof_sid.woof_sid_auto_shortcode .woof_redraw_zone .woof_container,
+  .woof .woof_redraw_zone .woof_container {
     width: 100%;
+  }
+  #shop-container .woof_products_top_panel {
+    grid-row-start: 2;
   }
 }

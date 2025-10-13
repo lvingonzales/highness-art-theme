@@ -23,6 +23,8 @@ if (shortcode_exists('woof')) {
 	echo do_shortcode('[woof]');
 }
 ?>
-<div class="woocommerce-no-products-found">
-	<?php wc_print_notice(esc_html__('No products were found matching your selection.', 'woocommerce'), 'notice'); ?>
+<div class="products-container">
+	<div class="woocommerce-no-products-found">
+		<?php wc_print_notice(esc_html__('No products were found matching your selection.', 'woocommerce'), 'notice'); ?>
+	</div>
 </div>
