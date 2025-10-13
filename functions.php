@@ -134,3 +134,8 @@ function product_title_and_author () {
         echo '<span class="product-author"> ' . esc_html( $author_name ) . '</span>';
     }
 }
+
+add_action ('woocommerce_before_shop_loop', function() {
+    remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+    remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+}, 1);
