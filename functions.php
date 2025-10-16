@@ -24,6 +24,11 @@ if (!function_exists('highness_theme_setup')):
         );
 
         wp_enqueue_style(
+            'highnessart_paypal_style',
+            get_stylesheet_directory_uri() . '/public/css/paypal.css'
+        );
+
+        wp_enqueue_style(
             'highnessart_content_product_style',
             get_stylesheet_directory_uri() . '/public/css/woocommerce/content-product.css'
         );
@@ -186,10 +191,32 @@ add_action('woocommerce_single_product_summary', function() {
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 }, 1);
 
-add_action('highness_before_product_summary', 'woocommerce_template_single_title', 5 );
-add_action('highness_before_product_summary', 'woocommerce_template_single_rating', 10 );
-add_action('highness_before_product_summary', 'woocommerce_template_single_price', 10 );
-add_action('highness_before_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+// add_action('highness_before_product_summary', 'woocommerce_template_single_title', 5 );
+// add_action('highness_before_product_summary', 'woocommerce_template_single_rating', 10 );
+// add_action('highness_before_product_summary', 'woocommerce_template_single_price', 10 );
+// add_action('highness_before_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function() {
     return 'woocommerce_after_add_to_cart_form';
 });
+
+function highness_product_info() {
+    global $product;
+
+    echo '<div id="title">';
+    woocommerce_template_single_title();
+
+    $author = $product->get_attribute('pa_book-author');
+    if(!empty($author)) {
+        echo '<p class="product-author">';
+        echo 'by ';
+        echo esc_html($author);
+        echo '</p>';
+    }
+    echo '</div>';
+
+    woocommerce_template_single_rating();
+    woocommerce_template_single_price();
+    woocommerce_template_single_add_to_cart();
+}
+
+add_action('highness_before_product_summary', 'highness_product_info');
