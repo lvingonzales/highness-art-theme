@@ -51,6 +51,13 @@ if (!function_exists('highness_theme_setup')):
                 get_stylesheet_directory_uri() . "/public/css/woocommerce/archive-product.css"
             );
         }
+
+        if (is_product()) {
+            wp_enqueue_style(
+                "highnessart_product_style",
+                get_stylesheet_directory_uri() . "/public/css/woocommerce/content-single-product.css"
+            );
+        }
     }
 
 endif;
@@ -169,3 +176,20 @@ add_action('woocommerce_before_main_content', function () {
 }, 1);
 
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+
+// Single Product Page Hook Overrides
+add_action('woocommerce_single_product_summary', function() {
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+}, 1);
+
+add_action('highness_before_product_summary', 'woocommerce_template_single_title', 5 );
+add_action('highness_before_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action('highness_before_product_summary', 'woocommerce_template_single_price', 10 );
+add_action('highness_before_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function() {
+    return 'woocommerce_after_add_to_cart_form';
+});
