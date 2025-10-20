@@ -62,6 +62,11 @@ if (!function_exists('highness_theme_setup')):
                 "highnessart_product_style",
                 get_stylesheet_directory_uri() . "/public/css/woocommerce/content-single-product.css"
             );
+
+            wp_enqueue_style(
+                "highnessart_product_tabs_style",
+                get_stylesheet_directory_uri() . "/public/css/woocommerce/tabs/tabs.css"
+            );
         }
     }
 
