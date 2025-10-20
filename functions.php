@@ -205,6 +205,13 @@ add_action('woocommerce_after_single_product_summary', function() {
     add_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 10);
 }, 1);
 
+// Remove sidebar on single product pages
+add_action( 'wp', function() {
+    if ( is_product() ) {
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+    }
+});
+
 // add_action('highness_before_product_summary', 'woocommerce_template_single_title', 5 );
 // add_action('highness_before_product_summary', 'woocommerce_template_single_rating', 10 );
 // add_action('highness_before_product_summary', 'woocommerce_template_single_price', 10 );

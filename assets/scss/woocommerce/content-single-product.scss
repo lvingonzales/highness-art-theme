@@ -1,7 +1,7 @@
 @use "../variables" as *;
 body #product-info-container {
     display: flex;
-    max-width: 1600px;
+    width: min(100%, 1600px);
     justify-content: center;
     gap: 2rem;
     .product-images {
@@ -15,6 +15,7 @@ body #product-info-container {
 
     .product-info {
         min-width: 250px;
+        max-width: 500px;
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
@@ -26,9 +27,29 @@ body #product-info-container {
         flex-direction: column;
         gap: .5rem;
 
+        button.single_add_to_cart_button {
+            width: min(100%, 250px) !important;
+        }
+
         .quantity .input-text.qty {
             width: 3rem;
             height: 1.5rem;
         }
     }
+
+    .ppc-button-wrapper {
+        width: min(100%, 250px) !important;
+    }
+}
+
+.product-info-tabs-container {
+    width: min(100%, 1200px);
+}
+
+main .product {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    padding: 2rem 0px;
 }

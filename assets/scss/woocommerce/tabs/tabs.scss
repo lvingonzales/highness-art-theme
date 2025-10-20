@@ -1,1 +1,59 @@
 @use "../../variables" as *;
+
+.woocommerce-tabs.wc-tabs-wrapper {
+  .tabs.wc-tabs {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      a.tab-heading {
+        padding: 0.5rem 0px;
+        border-bottom: 1px solid $black-50;
+        display: flex;
+      }
+
+      a.tab-heading h2 {
+        flex-grow: 1;
+      }
+
+      a.tab-heading::after {
+        content: "";
+        display: block;
+        height: 2rem;
+        width: 2rem;
+        background: url("../../../icons/chevron-right.svg");
+        background-size: cover;
+      }
+
+      .woocommerce-Tabs-panel {
+        margin: 1rem 0.5rem;
+
+        &#tab-author {
+            h3 {
+                margin-top: 0px;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        &#tab-additional_information {
+            table {
+                border-collapse: collapse;
+                th, td {
+                    padding: 1rem;
+                    text-align: left;
+                    border-bottom: 1px solid $black-50;
+                }
+            }
+        }
+      }
+    }
+
+    li.active {
+        a.tab-heading::after {
+        background: url("../../../icons/chevron-down.svg");
+        background-size: cover;
+      }
+    }
+  }
+}
