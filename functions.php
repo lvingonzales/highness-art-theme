@@ -192,9 +192,13 @@ add_action('woocommerce_single_product_summary', function() {
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 }, 1);
 
-// add_action('woocommerce_after_single_product_summary', function() {
-//     remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
-// }, 1);
+add_action('woocommerce_after_single_product_summary', function() {
+    remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+    remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+    add_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 20);
+    add_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 10);
+}, 1);
 
 // add_action('highness_before_product_summary', 'woocommerce_template_single_title', 5 );
 // add_action('highness_before_product_summary', 'woocommerce_template_single_rating', 10 );
@@ -225,3 +229,148 @@ function highness_product_info() {
 }
 
 add_action('highness_before_product_summary', 'highness_product_info');
+
+
+// Add and rename tabs
+
+if ( !function_exists( 'highness_tab_content')) {
+    function highness_tab_content () {
+        wc_get_template('single-product/tabs/tab-content.php');
+    }
+} 
+
+if ( !function_exists( 'highness_author_tab')) {
+    function highness_author_tab () {
+        wc_get_template('single-product/tabs/author.php');
+    }
+} 
+
+
+add_filter( 'woocommerce_product_tabs', 'woo_edit_tabs', 98);
+
+function woo_edit_tabs( $tabs ) {
+
+    $tabs['description']['title'] = __('About this book');
+    $tabs['description']['callback'] = 'highness_tab_content';
+
+    $tabs['author'] = array(
+        'title'         => __('About this author', 'woocommerce'),
+        'priority'      => 10,
+        'callback'      => 'highness_author_tab',
+    );
+
+    return $tabs;
+}
+
+
+// Custom Woocommerce Author Taxonomy
+
+add_action ('init', 'register_woocommerce_custom_taxonomy');
+
+function register_woocommerce_custom_taxonomy() {
+    $text_domain = 'woocommerce';
+
+    register_taxonomy( 'authors', array('product'), array(
+        'labels' => array(
+            'name' => _x('Authors', 'taxonomy general name', $text_domain),
+            'singular_name' => _x('Author', 'taxonomy singular name', $text_domain),
+            'search_items' => __('Search Authors', $text_domain),
+            'all_items' => __('All Authors', $text_domain),
+            'parent_item' => __('Parent Author', $text_domain),
+            'parent_item_colon' => __('Parent Author:', $text_domain),
+            'edit_item' => __('Edit Author', $text_domain),
+            'update_item' => __('Update Author', $text_domain),
+            'add_new_item' => __('Add New Author', $text_domain),
+            'new_item_name' => __('New Author Name', $text_domain),
+            'menu_name' => __('Authors', $text_domain),
+        ),
+        'hierarchical'      => true, // Like categories
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'show_in_rest'      => true,
+        'rewrite'           => array('slug' => 'author'),
+    ) );
+}
+
+// Image upload for Author taxonomy
+
+add_action( 'authors_add_form_fields', 'add_taxonomy_image_field', 10, 2 );
+function add_taxonomy_image_field( $taxonomy ) {
+    ?>
+    <div class="form-field term-group">
+        <label for="taxonomy-image-id"><?php _e( 'Image', 'woocommerce' ); ?></label>
+        <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id" value="">
+        <div id="taxonomy-image-wrapper"></div>
+        <p>
+            <input type="button" class="button button-secondary taxonomy-media-upload" id="taxonomy-media-upload" value="<?php _e( 'Add Image', 'woocommerce' ); ?>" />
+            <input type="button" class="button button-secondary taxonomy-media-remove" id="taxonomy-media-remove" value="<?php _e( 'Remove Image', 'woocommerce' ); ?>" />
+        </p>
+    </div>
+    <?php
+}
+
+add_action( 'authors_edit_form_fields', 'edit_taxonomy_image_field', 10, 2 );
+function edit_taxonomy_image_field( $term, $taxonomy ) {
+    $image_id = get_term_meta( $term->term_id, 'taxonomy-image-id', true );
+    ?>
+    <tr class="form-field term-group-wrap">
+        <th scope="row"><label for="taxonomy-image-id"><?php _e( 'Image', 'woocommerce' ); ?></label></th>
+        <td>
+            <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id" value="<?php echo esc_attr( $image_id ); ?>">
+            <div id="taxonomy-image-wrapper">
+                <?php if ( $image_id ) : ?>
+                    <?php echo wp_get_attachment_image( $image_id, 'thumbnail' ); ?>
+                <?php endif; ?>
+            </div>
+            <p>
+                <input type="button" class="button button-secondary taxonomy-media-upload" id="taxonomy-media-upload" value="<?php _e( 'Add Image', 'woocommerce' ); ?>" />
+                <input type="button" class="button button-secondary taxonomy-media-remove" id="taxonomy-media-remove" value="<?php _e( 'Remove Image', 'woocommerce' ); ?>" />
+            </p>
+        </td>
+    </tr>
+    <?php
+}
+
+add_action( 'created_authors', 'save_taxonomy_image_meta', 10, 2 );
+add_action( 'edited_authors', 'save_taxonomy_image_meta', 10, 2 );
+
+function save_taxonomy_image_meta( $term_id, $tt_id ) {
+    if ( isset( $_POST['taxonomy-image-id'] ) && '' !== $_POST['taxonomy-image-id'] ) {
+        update_term_meta( $term_id, 'taxonomy-image-id', absint( $_POST['taxonomy-image-id'] ) );
+    } else {
+        update_term_meta( $term_id, 'taxonomy-image-id', '' );
+    }
+}
+
+add_action( 'admin_footer', 'taxonomy_image_script' );
+function taxonomy_image_script() {
+    ?>
+    <script>
+    jQuery(document).ready(function($){
+        var frame;
+        $('.taxonomy-media-upload').on('click', function(e){
+            e.preventDefault();
+            var button = $(this);
+            if (frame) frame.close();
+            frame = wp.media({
+                title: 'Select or Upload Image',
+                button: { text: 'Use this image' },
+                multiple: false
+            });
+            frame.on('select', function(){
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#taxonomy-image-id').val(attachment.id);
+                $('#taxonomy-image-wrapper').html('<img src="'+attachment.sizes.thumbnail.url+'" style="max-width:100%;"/>');
+            });
+            frame.open();
+        });
+
+        $('.taxonomy-media-remove').on('click', function(){
+            $('#taxonomy-image-id').val('');
+            $('#taxonomy-image-wrapper').html('');
+        });
+    });
+    </script>
+    <?php
+}
