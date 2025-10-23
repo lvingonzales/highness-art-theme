@@ -8,24 +8,28 @@ $founder_image = get_field('founder_image');
 <main class="about-page">
     <?php while (have_posts()):
         the_post() ?>
-        <section class="intro">
+        <section class="intro-about">
             <h1>Welcome to Highness Publishing House</h1>
             <div class="paragraph-wrap">
                 <?php the_field("intro_paragraph"); ?>
             </div>
         </section>
 
-        <section class="owner">
-            <h2>Meet the founder</h2>
-            <div class="image-wrap">
-                <img src="<?php echo esc_url($founder_image['url']) ?>" />
-            </div>
-            <div class="image-caption">
-                <h3>Amana Manori</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="paragraph-wrap">
-                <?php the_field("founder_text"); ?>
+        <section class="founder">
+            <div class="founder-wrap">
+                <div class="image-wrap">
+                    <img class="founder-img" src="<?php echo esc_url($founder_image['url']) ?>" />
+                    <div class="image-caption">
+                        <h3>Amana Manori</h3>
+                        <p>Founder & CEO</p>
+                    </div>
+                </div>
+                <div class="founder-info-wrap">
+                    <h2>Meet the founder</h2>
+                    <div class="paragraph-wrap">
+                        <?php the_field("founder_text"); ?>
+                    </div>
+                </div>
             </div>
         </section>
 
