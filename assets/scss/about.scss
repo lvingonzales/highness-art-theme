@@ -1,0 +1,5 @@
+@use "./variables" as *;
+
+section.intro {
+    width: min(100%, 1200px);
+}

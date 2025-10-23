@@ -68,6 +68,13 @@ if (!function_exists('highness_theme_setup')):
                 get_stylesheet_directory_uri() . "/public/css/woocommerce/tabs/tabs.css"
             );
         }
+
+        if(is_page_template( 'page-about.php' )) {
+            wp_enqueue_style(
+                "highnessart_about_style",
+                get_stylesheet_directory_uri() . "/public/css/about.css"
+            );
+        }
     }
 
 endif;
