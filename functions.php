@@ -8,32 +8,6 @@ if (!function_exists('highness_theme_setup')):
             get_stylesheet_uri()
         );
 
-        wp_enqueue_style(
-            'highnessart_primary_style',
-            get_stylesheet_directory_uri() . '/public/css/primary.css'
-        );
-
-        wp_enqueue_style(
-            'highnessart_header_style',
-            get_stylesheet_directory_uri() . '/public/css/header.css'
-        );
-
-        wp_enqueue_style(
-            'highnessart_footer_style',
-            get_stylesheet_directory_uri() . '/public/css/footer.css'
-        );
-
-        wp_enqueue_style(
-            'highnessart_paypal_style',
-            get_stylesheet_directory_uri() . '/public/css/paypal.css'
-        );
-
-        wp_enqueue_style(
-            'highnessart_content_product_style',
-            get_stylesheet_directory_uri() . '/public/css/woocommerce/content-product.css'
-        );
-
-
         wp_enqueue_script(
             "highnessart_header_script",
             get_stylesheet_directory_uri() . '/assets/js/header.js',
@@ -49,32 +23,6 @@ if (!function_exists('highness_theme_setup')):
             '1.0.0',
             true
         );
-
-        if (is_shop()) {
-            wp_enqueue_style(
-                "highnessart_shop_style",
-                get_stylesheet_directory_uri() . "/public/css/woocommerce/archive-product.css"
-            );
-        }
-
-        if (is_product()) {
-            wp_enqueue_style(
-                "highnessart_product_style",
-                get_stylesheet_directory_uri() . "/public/css/woocommerce/content-single-product.css"
-            );
-
-            wp_enqueue_style(
-                "highnessart_product_tabs_style",
-                get_stylesheet_directory_uri() . "/public/css/woocommerce/tabs/tabs.css"
-            );
-        }
-
-        if(is_page_template( 'page-about.php' )) {
-            wp_enqueue_style(
-                "highnessart_about_style",
-                get_stylesheet_directory_uri() . "/public/css/about.css"
-            );
-        }
     }
 
 endif;
