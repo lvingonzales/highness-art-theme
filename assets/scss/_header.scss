@@ -49,11 +49,11 @@ header.main {
         background-color: transparent;
 
         &.menu::after {
-          background-image: url("../icons/menu-2.svg");
+          background-image: url("public/icons/menu-2.svg");
         }
 
         &.close::after {
-          background-image: url("../icons/x.svg");
+          background-image: url("public/icons/x.svg");
         }
 
         &::after {

@@ -59,6 +59,12 @@ h2.sub-head {
   font-weight: 400;
 }
 
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0px;
+}
+
 p {
   font-size: 1rem;
   margin: 0px;
@@ -546,10 +552,10 @@ header.main .nav-bar {
     background-color: transparent;
   }
   header.main .nav-bar .nav-button.menu::after {
-    background-image: url("../icons/menu-2.svg");
+    background-image: url("public/icons/menu-2.svg");
   }
   header.main .nav-bar .nav-button.close::after {
-    background-image: url("../icons/x.svg");
+    background-image: url("public/icons/x.svg");
   }
   header.main .nav-bar .nav-button::after {
     content: "";
@@ -744,6 +750,57 @@ header.main .nav-bar .nav-container.desktop .nav-menu .nav-item svg {
   text-align: right;
 }
 
+main.collaborator-single {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-template-rows: max-content max-content auto;
+  width: min(100vw, 1000px);
+  margin: 4rem auto;
+}
+main.collaborator-single div.post-thumbnail {
+  grid-area: 1/1/2/2;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+main.collaborator-single div.post-thumbnail img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+main.collaborator-single div.title {
+  grid-area: 2/1/3/2;
+}
+main.collaborator-single div.paragraph-wrap {
+  grid-area: 1/2/4/3;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+main.collaborator-single div.paragraph-wrap p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1200px) {
+  main.collaborator-single {
+    display: flex;
+    flex-direction: column;
+  }
+  main.collaborator-single div.post-thumbnail {
+    margin: 0px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  main.collaborator-single div.title {
+    text-align: center;
+  }
+  main.collaborator-single div.paragraph-wrap {
+    padding: clamp(1rem, 10vw, 4rem);
+    text-align: justify;
+    line-height: 2;
+  }
+}
 body .irs-bar {
   background-color: #dbbf6a !important;
 }
