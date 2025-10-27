@@ -2,7 +2,7 @@ main.collaborator-single {
     display: grid;
     grid-template-columns: max-content auto;
     grid-template-rows: max-content max-content auto;
-    width: min(100vw, 1000px);
+    max-width: 1000px;
     margin: 4rem auto;
 
     div.post-thumbnail {

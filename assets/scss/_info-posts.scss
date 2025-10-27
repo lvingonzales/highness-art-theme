@@ -1,0 +1,49 @@
+@use "./variables" as *;
+
+main.additional-info.shipping-policy {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 0px;
+    line-height: 2;
+
+    section {
+        margin-bottom: 1.5rem;
+
+        section {
+            border-bottom: 1px solid $black-50;
+        }
+
+        ul li, ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+
+            caption {
+                caption-side: bottom;
+            }
+
+            border-collapse: collapse;
+            text-align: left;
+
+            thead, tr {
+                border-bottom: 1px solid $black-50;
+            }
+
+            th, tr, td {
+                padding: 0.5rem 0.5rem;
+            }
+
+            tbody tr:nth-of-type(odd) {
+                background-color: #1b1b1b10;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    main.additional-info.shipping-policy {
+        padding: clamp(1rem, 5vw, 4rem);
+    }
+}

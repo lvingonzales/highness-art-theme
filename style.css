@@ -754,7 +754,7 @@ main.collaborator-single {
   display: grid;
   grid-template-columns: max-content auto;
   grid-template-rows: max-content max-content auto;
-  width: min(100vw, 1000px);
+  max-width: 1000px;
   margin: 4rem auto;
 }
 main.collaborator-single div.post-thumbnail {
@@ -799,6 +799,46 @@ main.collaborator-single div.paragraph-wrap p {
     padding: clamp(1rem, 10vw, 4rem);
     text-align: justify;
     line-height: 2;
+  }
+}
+main.additional-info.shipping-policy {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0px;
+  line-height: 2;
+}
+main.additional-info.shipping-policy section {
+  margin-bottom: 1.5rem;
+}
+main.additional-info.shipping-policy section section {
+  border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
+}
+main.additional-info.shipping-policy section ul li, main.additional-info.shipping-policy section ol li {
+  margin-bottom: 0.5rem;
+}
+main.additional-info.shipping-policy section table {
+  width: 100%;
+}
+main.additional-info.shipping-policy section table caption {
+  caption-side: bottom;
+}
+main.additional-info.shipping-policy section table {
+  border-collapse: collapse;
+  text-align: left;
+}
+main.additional-info.shipping-policy section table thead, main.additional-info.shipping-policy section table tr {
+  border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
+}
+main.additional-info.shipping-policy section table th, main.additional-info.shipping-policy section table tr, main.additional-info.shipping-policy section table td {
+  padding: 0.5rem 0.5rem;
+}
+main.additional-info.shipping-policy section table tbody tr:nth-of-type(odd) {
+  background-color: rgba(27, 27, 27, 0.062745098);
+}
+
+@media (max-width: 1200px) {
+  main.additional-info.shipping-policy {
+    padding: clamp(1rem, 5vw, 4rem);
   }
 }
 body .irs-bar {
