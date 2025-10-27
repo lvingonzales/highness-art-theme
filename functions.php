@@ -341,3 +341,16 @@ function taxonomy_image_script() {
     </script>
     <?php
 }
+
+// Menu Registration
+function register_highness_menus() {
+    register_nav_menus(
+        array(
+            'header-menu' => __('Header Menu'),
+            'footer-menu-one' => __('Footer Menu One'),
+            'footer-menu-two' => __('Footer Menu Two')
+        )
+        );
+}
+
+add_action('init', 'register_highness_menus');
