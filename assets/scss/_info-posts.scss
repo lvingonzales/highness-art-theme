@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-main.additional-info.shipping-policy {
+main.additional-info {
     max-width: 1000px;
     margin: auto;
     padding: 2rem 0px;
@@ -15,6 +15,10 @@ main.additional-info.shipping-policy {
 
         ul li, ol li {
             margin-bottom: 0.5rem;
+        }
+
+        ol ul {
+            list-style-type: "- ";
         }
 
         table {
@@ -43,7 +47,7 @@ main.additional-info.shipping-policy {
 }
 
 @media (max-width: 1200px) {
-    main.additional-info.shipping-policy {
+    main.additional-info {
         padding: clamp(1rem, 5vw, 4rem);
     }
 }

@@ -1,10 +1,13 @@
-body {
-  margin: 0px;
+:root {
   font-size: 18px;
 }
 
+body {
+  margin: 0px;
+}
+
 @media only screen and (max-width: 650px) {
-  body {
+  :root {
     font-size: 16px;
   }
 }
@@ -801,43 +804,46 @@ main.collaborator-single div.paragraph-wrap p {
     line-height: 2;
   }
 }
-main.additional-info.shipping-policy {
+main.additional-info {
   max-width: 1000px;
   margin: auto;
   padding: 2rem 0px;
   line-height: 2;
 }
-main.additional-info.shipping-policy section {
+main.additional-info section {
   margin-bottom: 1.5rem;
 }
-main.additional-info.shipping-policy section section {
+main.additional-info section section {
   border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
 }
-main.additional-info.shipping-policy section ul li, main.additional-info.shipping-policy section ol li {
+main.additional-info section ul li, main.additional-info section ol li {
   margin-bottom: 0.5rem;
 }
-main.additional-info.shipping-policy section table {
+main.additional-info section ol ul {
+  list-style-type: "- ";
+}
+main.additional-info section table {
   width: 100%;
 }
-main.additional-info.shipping-policy section table caption {
+main.additional-info section table caption {
   caption-side: bottom;
 }
-main.additional-info.shipping-policy section table {
+main.additional-info section table {
   border-collapse: collapse;
   text-align: left;
 }
-main.additional-info.shipping-policy section table thead, main.additional-info.shipping-policy section table tr {
+main.additional-info section table thead, main.additional-info section table tr {
   border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
 }
-main.additional-info.shipping-policy section table th, main.additional-info.shipping-policy section table tr, main.additional-info.shipping-policy section table td {
+main.additional-info section table th, main.additional-info section table tr, main.additional-info section table td {
   padding: 0.5rem 0.5rem;
 }
-main.additional-info.shipping-policy section table tbody tr:nth-of-type(odd) {
+main.additional-info section table tbody tr:nth-of-type(odd) {
   background-color: rgba(27, 27, 27, 0.062745098);
 }
 
 @media (max-width: 1200px) {
-  main.additional-info.shipping-policy {
+  main.additional-info {
     padding: clamp(1rem, 5vw, 4rem);
   }
 }
