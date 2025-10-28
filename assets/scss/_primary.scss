@@ -2,6 +2,8 @@
 
 :root {
   font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
 }
 
 body {
@@ -72,6 +74,10 @@ h3 {
   font-size: 1.5rem;
   font-weight: 500;
   margin: 0px;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", serif;
 }
 
 p {

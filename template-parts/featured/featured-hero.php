@@ -25,7 +25,7 @@
                 <div class="text-content">
                     <div class="tagline"><h2>Edible Recipes for a Sophisticated Happy Hour</h2></div>
                     <div class="title-container">
-                        <p class="title">Stoned</p>
+                        <h2>STONED</h2>
                         <p class="author">Ann Allchin</p>
                     </div>
                     <div class="description">
