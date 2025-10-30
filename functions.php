@@ -23,6 +23,16 @@ if (!function_exists('highness_theme_setup')):
             '1.0.0',
             true
         );
+
+        if (is_front_page()) {
+            wp_enqueue_script(
+                "highnessart_hero_script",
+                get_stylesheet_directory_uri() . '/assets/js/hero-section.js',
+                array(),
+                '1.0.0',
+                true
+            );
+        }
     }
 
 endif;
@@ -33,9 +43,9 @@ function plugin_style_overrides()
 {
     if (is_shop()) {
         wp_enqueue_style(
-        "highnessart_woof_style",
-        get_stylesheet_directory_uri(  ) . "/public/css/woof/woof.css"
-    );
+            "highnessart_woof_style",
+            get_stylesheet_directory_uri() . "/public/css/woof/woof.css"
+        );
     }
 }
 
@@ -144,7 +154,7 @@ add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
 
 // Single Product Page Hook Overrides
-add_action('woocommerce_single_product_summary', function() {
+add_action('woocommerce_single_product_summary', function () {
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
@@ -152,7 +162,7 @@ add_action('woocommerce_single_product_summary', function() {
     remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 }, 1);
 
-add_action('woocommerce_after_single_product_summary', function() {
+add_action('woocommerce_after_single_product_summary', function () {
     remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
     remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
@@ -161,9 +171,9 @@ add_action('woocommerce_after_single_product_summary', function() {
 }, 1);
 
 // Remove sidebar on single product pages
-add_action( 'wp', function() {
-    if ( is_product() ) {
-        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+add_action('wp', function () {
+    if (is_product()) {
+        remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
     }
 });
 
@@ -171,18 +181,19 @@ add_action( 'wp', function() {
 // add_action('highness_before_product_summary', 'woocommerce_template_single_rating', 10 );
 // add_action('highness_before_product_summary', 'woocommerce_template_single_price', 10 );
 // add_action('highness_before_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function() {
+add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function () {
     return 'woocommerce_after_add_to_cart_form';
 });
 
-function highness_product_info() {
+function highness_product_info()
+{
     global $product;
 
     echo '<div id="title">';
     woocommerce_template_single_title();
 
     $author = $product->get_attribute('pa_book-author');
-    if(!empty($author)) {
+    if (!empty($author)) {
         echo '<p class="product-author">';
         echo 'by ';
         echo esc_html($author);
@@ -200,30 +211,33 @@ add_action('highness_before_product_summary', 'highness_product_info');
 
 // Add and rename tabs
 
-if ( !function_exists( 'highness_tab_content')) {
-    function highness_tab_content () {
+if (!function_exists('highness_tab_content')) {
+    function highness_tab_content()
+    {
         wc_get_template('single-product/tabs/tab-content.php');
     }
-} 
+}
 
-if ( !function_exists( 'highness_author_tab')) {
-    function highness_author_tab () {
+if (!function_exists('highness_author_tab')) {
+    function highness_author_tab()
+    {
         wc_get_template('single-product/tabs/author.php');
     }
-} 
+}
 
 
-add_filter( 'woocommerce_product_tabs', 'woo_edit_tabs', 98);
+add_filter('woocommerce_product_tabs', 'woo_edit_tabs', 98);
 
-function woo_edit_tabs( $tabs ) {
+function woo_edit_tabs($tabs)
+{
 
     $tabs['description']['title'] = __('About this book');
     $tabs['description']['callback'] = 'highness_tab_content';
 
     $tabs['author'] = array(
-        'title'         => __('About this author', 'woocommerce'),
-        'priority'      => 10,
-        'callback'      => 'highness_author_tab',
+        'title' => __('About this author', 'woocommerce'),
+        'priority' => 10,
+        'callback' => 'highness_author_tab',
     );
 
     return $tabs;
@@ -232,12 +246,13 @@ function woo_edit_tabs( $tabs ) {
 
 // Custom Woocommerce Author Taxonomy
 
-add_action ('init', 'register_woocommerce_custom_taxonomy');
+add_action('init', 'register_woocommerce_custom_taxonomy');
 
-function register_woocommerce_custom_taxonomy() {
+function register_woocommerce_custom_taxonomy()
+{
     $text_domain = 'woocommerce';
 
-    register_taxonomy( 'authors', array('product'), array(
+    register_taxonomy('authors', array('product'), array(
         'labels' => array(
             'name' => _x('Authors', 'taxonomy general name', $text_domain),
             'singular_name' => _x('Author', 'taxonomy singular name', $text_domain),
@@ -251,106 +266,150 @@ function register_woocommerce_custom_taxonomy() {
             'new_item_name' => __('New Author Name', $text_domain),
             'menu_name' => __('Authors', $text_domain),
         ),
-        'hierarchical'      => true, // Like categories
-        'show_ui'           => true,
+        'hierarchical' => true, // Like categories
+        'show_ui' => true,
         'show_admin_column' => true,
-        'query_var'         => true,
-        'show_in_rest'      => true,
-        'rewrite'           => array('slug' => 'author'),
-    ) );
+        'query_var' => true,
+        'show_in_rest' => true,
+        'rewrite' => array('slug' => 'author'),
+    ));
 }
 
 // Image upload for Author taxonomy
 
-add_action( 'authors_add_form_fields', 'add_taxonomy_image_field', 10, 2 );
-function add_taxonomy_image_field( $taxonomy ) {
+add_action('authors_add_form_fields', 'add_taxonomy_image_field', 10, 2);
+function add_taxonomy_image_field($taxonomy)
+{
     ?>
     <div class="form-field term-group">
-        <label for="taxonomy-image-id"><?php _e( 'Image', 'woocommerce' ); ?></label>
+        <label for="taxonomy-image-id"><?php _e('Image', 'woocommerce'); ?></label>
         <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id" value="">
         <div id="taxonomy-image-wrapper"></div>
         <p>
-            <input type="button" class="button button-secondary taxonomy-media-upload" id="taxonomy-media-upload" value="<?php _e( 'Add Image', 'woocommerce' ); ?>" />
-            <input type="button" class="button button-secondary taxonomy-media-remove" id="taxonomy-media-remove" value="<?php _e( 'Remove Image', 'woocommerce' ); ?>" />
+            <input type="button" class="button button-secondary taxonomy-media-upload" id="taxonomy-media-upload"
+                value="<?php _e('Add Image', 'woocommerce'); ?>" />
+            <input type="button" class="button button-secondary taxonomy-media-remove" id="taxonomy-media-remove"
+                value="<?php _e('Remove Image', 'woocommerce'); ?>" />
         </p>
     </div>
     <?php
 }
 
-add_action( 'authors_edit_form_fields', 'edit_taxonomy_image_field', 10, 2 );
-function edit_taxonomy_image_field( $term, $taxonomy ) {
-    $image_id = get_term_meta( $term->term_id, 'taxonomy-image-id', true );
+add_action('authors_edit_form_fields', 'edit_taxonomy_image_field', 10, 2);
+function edit_taxonomy_image_field($term, $taxonomy)
+{
+    $image_id = get_term_meta($term->term_id, 'taxonomy-image-id', true);
     ?>
     <tr class="form-field term-group-wrap">
-        <th scope="row"><label for="taxonomy-image-id"><?php _e( 'Image', 'woocommerce' ); ?></label></th>
+        <th scope="row"><label for="taxonomy-image-id"><?php _e('Image', 'woocommerce'); ?></label></th>
         <td>
-            <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id" value="<?php echo esc_attr( $image_id ); ?>">
+            <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id"
+                value="<?php echo esc_attr($image_id); ?>">
             <div id="taxonomy-image-wrapper">
-                <?php if ( $image_id ) : ?>
-                    <?php echo wp_get_attachment_image( $image_id, 'thumbnail' ); ?>
+                <?php if ($image_id): ?>
+                    <?php echo wp_get_attachment_image($image_id, 'thumbnail'); ?>
                 <?php endif; ?>
             </div>
             <p>
-                <input type="button" class="button button-secondary taxonomy-media-upload" id="taxonomy-media-upload" value="<?php _e( 'Add Image', 'woocommerce' ); ?>" />
-                <input type="button" class="button button-secondary taxonomy-media-remove" id="taxonomy-media-remove" value="<?php _e( 'Remove Image', 'woocommerce' ); ?>" />
+                <input type="button" class="button button-secondary taxonomy-media-upload" id="taxonomy-media-upload"
+                    value="<?php _e('Add Image', 'woocommerce'); ?>" />
+                <input type="button" class="button button-secondary taxonomy-media-remove" id="taxonomy-media-remove"
+                    value="<?php _e('Remove Image', 'woocommerce'); ?>" />
             </p>
         </td>
     </tr>
     <?php
 }
 
-add_action( 'created_authors', 'save_taxonomy_image_meta', 10, 2 );
-add_action( 'edited_authors', 'save_taxonomy_image_meta', 10, 2 );
+add_action('created_authors', 'save_taxonomy_image_meta', 10, 2);
+add_action('edited_authors', 'save_taxonomy_image_meta', 10, 2);
 
-function save_taxonomy_image_meta( $term_id, $tt_id ) {
-    if ( isset( $_POST['taxonomy-image-id'] ) && '' !== $_POST['taxonomy-image-id'] ) {
-        update_term_meta( $term_id, 'taxonomy-image-id', absint( $_POST['taxonomy-image-id'] ) );
+function save_taxonomy_image_meta($term_id, $tt_id)
+{
+    if (isset($_POST['taxonomy-image-id']) && '' !== $_POST['taxonomy-image-id']) {
+        update_term_meta($term_id, 'taxonomy-image-id', absint($_POST['taxonomy-image-id']));
     } else {
-        update_term_meta( $term_id, 'taxonomy-image-id', '' );
+        update_term_meta($term_id, 'taxonomy-image-id', '');
     }
 }
 
-add_action( 'admin_footer', 'taxonomy_image_script' );
-function taxonomy_image_script() {
+add_action('admin_footer', 'taxonomy_image_script');
+function taxonomy_image_script()
+{
     ?>
     <script>
-    jQuery(document).ready(function($){
-        var frame;
-        $('.taxonomy-media-upload').on('click', function(e){
-            e.preventDefault();
-            var button = $(this);
-            if (frame) frame.close();
-            frame = wp.media({
-                title: 'Select or Upload Image',
-                button: { text: 'Use this image' },
-                multiple: false
+        jQuery(document).ready(function ($) {
+            var frame;
+            $('.taxonomy-media-upload').on('click', function (e) {
+                e.preventDefault();
+                var button = $(this);
+                if (frame) frame.close();
+                frame = wp.media({
+                    title: 'Select or Upload Image',
+                    button: { text: 'Use this image' },
+                    multiple: false
+                });
+                frame.on('select', function () {
+                    var attachment = frame.state().get('selection').first().toJSON();
+                    $('#taxonomy-image-id').val(attachment.id);
+                    $('#taxonomy-image-wrapper').html('<img src="' + attachment.sizes.thumbnail.url + '" style="max-width:100%;"/>');
+                });
+                frame.open();
             });
-            frame.on('select', function(){
-                var attachment = frame.state().get('selection').first().toJSON();
-                $('#taxonomy-image-id').val(attachment.id);
-                $('#taxonomy-image-wrapper').html('<img src="'+attachment.sizes.thumbnail.url+'" style="max-width:100%;"/>');
-            });
-            frame.open();
-        });
 
-        $('.taxonomy-media-remove').on('click', function(){
-            $('#taxonomy-image-id').val('');
-            $('#taxonomy-image-wrapper').html('');
+            $('.taxonomy-media-remove').on('click', function () {
+                $('#taxonomy-image-id').val('');
+                $('#taxonomy-image-wrapper').html('');
+            });
         });
-    });
     </script>
     <?php
 }
 
 // Menu Registration
-function register_highness_menus() {
+function register_highness_menus()
+{
     register_nav_menus(
         array(
             'header-menu' => __('Header Menu'),
             'footer-menu-one' => __('Footer Menu One'),
             'footer-menu-two' => __('Footer Menu Two')
         )
-        );
+    );
 }
 
 add_action('init', 'register_highness_menus');
+
+
+/*
+ * Snippet: How to Add a Subtitle to WooCommerce Products – 2025
+ * Author: John Cook 
+ * URL: https://wcsuccessacademy.com/?p=1711
+ * Tested with WooCommerce 9.3.3
+ * "This function adds a custom subtitle field to the product edit page"
+ */
+function wcsuccess_add_subtitle_field()
+{
+    woocommerce_wp_text_input(array(
+        'id' => '_product_subtitle',
+        'label' => __('Product Subtitle', 'woocommerce'),
+        'placeholder' => 'Enter product subtitle here',
+        'description' => __('Add a subtitle that will display below the product title.', 'woocommerce'),
+        'desc_tip' => true
+    ));
+}
+add_action('woocommerce_product_options_general_product_data', 'wcsuccess_add_subtitle_field');
+
+/*
+ * Snippet: How to Add a Subtitle to WooCommerce Products – 2025
+ * Author: John Cook 
+ * URL: https://wcsuccessacademy.com/?p=1711
+ * Tested with WooCommerce 9.3.3
+ * "This function saves the custom subtitle field data"
+ */
+function wcsuccess_save_subtitle_field($post_id)
+{
+    $subtitle = isset($_POST['_product_subtitle']) ? sanitize_text_field($_POST['_product_subtitle']) : '';
+    update_post_meta($post_id, '_product_subtitle', $subtitle);
+}
+add_action('woocommerce_process_product_meta', 'wcsuccess_save_subtitle_field');
