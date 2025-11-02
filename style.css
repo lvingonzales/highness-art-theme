@@ -124,7 +124,7 @@ a, a:visited {
 }
 
 .paragraph-wrap {
-  line-height: 1.168;
+  line-height: 2;
   padding-left: 1rem;
 }
 
@@ -171,6 +171,7 @@ section.founder {
 }
 section.founder div.founder-wrap {
   width: min(100vw, 1200px);
+  max-height: 500px;
   margin: 0px auto;
   display: flex;
   gap: 2rem;
@@ -181,6 +182,7 @@ section.founder div.founder-wrap div.image-wrap {
   flex: 1 1 0;
 }
 section.founder div.founder-wrap div.image-wrap img.founder-img {
+  max-height: 200px;
   filter: drop-shadow(0px 0px 16px rgba(255, 255, 255, 0.1882352941));
 }
 section.founder div.founder-wrap div.image-wrap div.image-caption {
@@ -197,6 +199,9 @@ section.founder div.founder-wrap div.founder-info-wrap {
 }
 section.founder div.founder-wrap div.founder-info-wrap h2 {
   margin-bottom: 0.5rem;
+}
+section.founder div.founder-wrap div.founder-info-wrap div.paragraph-wrap {
+  font-size: 1rem important;
 }
 
 section.employees ul.employee-list {
@@ -591,149 +596,243 @@ section.featured-hero div.section-wrap ul.featured-list li.featured-item.active 
   opacity: 50%;
 }
 
-header.main {
-  height: 120px;
-  background-color: #1b1817;
-  display: flex;
-}
-header.main .container {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  padding: 0px 10vw;
-}
-@media (max-width: 600px) {
-  header.main .container {
-    padding: 0px 5vw;
+@media only screen and (min-width: 0em) {
+  header.main {
+    height: 120px;
+    background-color: #1b1817;
+    display: flex;
   }
-}
-header.main .container a {
-  text-decoration: none;
-  margin: 10px 10px;
-}
-header.main .container a .logo-container {
-  display: flex;
-  align-content: center;
-}
-header.main .container a .logo-container p {
-  font-size: 1.5rem;
-  margin: auto 1rem;
-  color: #dbbf6a;
-  font-weight: 400;
-  font-family: "Playfair", serif;
-}
-header.main .container a .logo-container .logo.header {
-  width: auto;
-  height: 100px;
-}
-header.main .nav-bar {
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 600px) {
-  header.main .nav-bar .nav-button {
+  header.main div.container {
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    align-items: center;
+    margin: 0px 1rem;
+    width: 100%;
+    position: relative;
+  }
+  header.main div.container h3 {
+    color: #dbbf6a;
+    flex: 1 1 0;
+    text-align: center;
+  }
+  header.main div.container a#logo-header {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex: 2 1 0;
+  }
+  header.main div.container a#logo-header div.logo-container {
+    display: flex;
+    align-items: center;
+  }
+  header.main div.container a#logo-header div.logo-container img.logo.header {
+    width: auto;
+    height: 108px;
+  }
+  header.main div.container nav.nav-bar {
+    margin: auto 0px;
+  }
+  header.main div.container nav.nav-bar button.nav-button {
     border: none;
     background-color: transparent;
   }
-  header.main .nav-bar .nav-button.menu::after {
+  header.main div.container nav.nav-bar button.nav-button.menu::after {
     background-image: url("public/icons/menu-2.svg");
   }
-  header.main .nav-bar .nav-button.close::after {
+  header.main div.container nav.nav-bar button.nav-button.close::after {
     background-image: url("public/icons/x.svg");
   }
-  header.main .nav-bar .nav-button::after {
+  header.main div.container nav.nav-bar button.nav-button::after {
     content: "";
     background-size: 3rem 3rem;
     width: 3rem;
     height: 3rem;
     display: block;
   }
+  header.main div.container nav.nav-bar div.nav-container .nav-overlay {
+    position: absolute;
+    top: 100vh;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1b1817;
+    opacity: 0;
+    visibility: inherit;
+    pointer-events: none;
+    transition: opacity 300ms ease, visibility 100ms linear;
+  }
+  header.main div.container nav.nav-bar div.nav-container {
+    visibility: hidden;
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 500ms ease 100ms, visibility 500ms linear 100ms;
+  }
+  header.main div.container nav.nav-bar div.nav-container.active {
+    transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  header.main div.container nav.nav-bar div.nav-container.active div.nav-overlay {
+    opacity: 0.25;
+    visibility: inherit;
+    transition-delay: 0s;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content {
+    display: grid;
+    grid-template-columns: auto max-content;
+    grid-template-rows: max-content auto;
+    position: relative;
+    height: 100%;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content .logo-container {
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, -10%);
+    left: 50%;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content button.nav-button {
+    grid-column-start: 2;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0px;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 3rem);
+    align-items: center;
+    font-size: 1.5rem;
+    padding-left: 0px;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item {
+    height: 100%;
+    padding-left: 1rem;
+    line-height: 3rem;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.home > a::before {
+    background-image: url("public/icons/home.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.shop > a::before {
+    background-image: url("public/icons/books.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.about > a::before {
+    background-image: url("public/icons/info-circle.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.contact > a::before {
+    background-image: url("public/icons/message.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.cart > a::before {
+    background-image: url("public/icons/shopping-cart.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item {
+    background: linear-gradient(to left, transparent, #1b1b1b 50%);
+    color: #dbbf6a;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item a::before {
+    background-image: none;
+    background-color: #dbbf6a;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 2.25rem;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.home > a::before {
+    mask-image: url("public/icons/home.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.shop > a::before {
+    mask-image: url("public/icons/books.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.about > a::before {
+    mask-image: url("public/icons/info-circle.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.contact > a::before {
+    mask-image: url("public/icons/message.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.cart > a::before {
+    mask-image: url("public/icons/shopping-cart.svg");
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item a {
+    color: inherit;
+    display: flex;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item a::before {
+    content: " ";
+    background-size: 2.25rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+  }
 }
-header.main .nav-bar .nav-container.mobile {
-  background-color: white;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transform: translateY(-100%);
-  visibility: hidden;
-  transition: transform 0.3s ease-in-out;
+@media only screen and (min-width: 1280px) {
+  header.main {
+    justify-content: center;
+  }
+  header.main div.container {
+    max-width: 1600px;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+  }
+  header.main div.container a#logo-header {
+    grid-column-start: 2;
+  }
+  header.main div.container a#title-header {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  header.main div.container nav.nav-bar button.nav-button {
+    display: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-overlay {
+    display: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container {
+    position: unset;
+    visibility: visible;
+    background: none;
+    width: unset;
+    height: unset;
+    transform: none;
+    transition: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content {
+    display: flex;
+    justify-content: center;
+    height: unset;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content .logo-container {
+    display: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Playfair Display", serif;
+    gap: 1rem;
+    font-weight: 400;
+    list-style: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item {
+    height: unset;
+    padding: unset;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item {
+    background: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item a::before {
+    display: none;
+  }
+  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item {
+    color: #dbbf6a;
+  }
 }
-header.main .nav-bar .nav-container.mobile .nav-content {
-  display: flex;
-  flex-direction: row-reverse;
-  position: relative;
-  height: 100%;
-}
-header.main .nav-bar .nav-container.mobile .nav-content .nav-button.close {
-  align-self: flex-start;
-}
-header.main .nav-bar .nav-container.mobile .nav-content .logo-container {
-  position: absolute;
-  bottom: 0;
-  transform: translate(-50%, -10%);
-  left: 50%;
-}
-header.main .nav-bar .nav-container.mobile .nav-menu {
-  margin: 0px 0px;
-  flex: 1 0 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 5px;
-  gap: 0.5rem;
-}
-header.main .nav-bar .nav-container.mobile .nav-menu .nav-item svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: block;
-}
-header.main .nav-bar .nav-container.mobile .nav-menu .nav-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
-  height: 50px;
-  line-height: 50px;
-}
-header.main .nav-bar .nav-container.mobile .nav-overlay {
-  position: absolute;
-  top: 100vh;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  background-color: #1b1817;
-  opacity: 0;
-  pointer-events: none;
-}
-header.main .nav-bar .nav-container.mobile.active {
-  transform: translateY(0);
-  visibility: visible;
-}
-header.main .nav-bar .nav-container.mobile.active .nav-overlay {
-  opacity: 0.25;
-}
-header.main .nav-bar .nav-container.desktop .logo-container {
-  display: none;
-}
-header.main .nav-bar .nav-container.desktop .nav-menu {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
-}
-header.main .nav-bar .nav-container.desktop .nav-menu .nav-item {
-  color: white;
-  font-size: 1.25rem;
-}
-header.main .nav-bar .nav-container.desktop .nav-menu .nav-item svg {
-  display: none;
-}
-
 .intro {
   display: flex;
   justify-content: center;

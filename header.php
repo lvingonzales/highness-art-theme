@@ -22,7 +22,7 @@
     <div class="site">
         <header class="main">
             <div class="container header">
-                <a href="#">
+                <a href="<?php echo esc_attr(get_permalink(16)); ?>" id="logo-header">
                     <div class="logo-container">
                         <?php
                         echo wp_get_attachment_image(
@@ -35,15 +35,27 @@
                             )
                         );
                         ?>
-                        <p>
-                            Highness Global Publishing House
-                        </p>
                     </div>
                 </a>
+                <a href="<?php echo esc_attr(get_permalink(16)); ?>" id="title-header">
+                    <h3>
+                        Highness Global Publishing House
+                    </h3>
+                </a>
                 <nav class="nav-bar">
-                    <div class="nav-container">
+                    <button class="nav-button menu"></button>
+                    <div class="nav-container desktop">
+                        <div class="nav-overlay"></div>
                         <div class="nav-content">
-                            <ul class="nav-menu">
+                            <button class="nav-button close"></button>
+                            <?php
+                            wp_nav_menu(array(
+                                'menu' => 'header-menu',
+                                'menu_class' => 'nav-menu',
+                                'container' => false,
+                            ))
+                                ?>
+                            <!-- <ul class="nav-menu">
                                 <li class="nav-item cart">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -113,7 +125,7 @@
                                     </svg>
                                     Contact Us
                                 </li>
-                            </ul>
+                            </ul> -->
                             <div class="logo-container">
                                 <?php
                                 echo wp_get_attachment_image(

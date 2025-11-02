@@ -47,6 +47,7 @@ section.founder {
 
   div.founder-wrap {
     width: min(100vw, 1200px);
+    max-height: 500px;
     margin: 0px auto;
 
     display: flex;
@@ -58,6 +59,7 @@ section.founder {
       flex: 1 1 0;
 
       img.founder-img {
+        max-height: 200px;
         filter: drop-shadow(0px 0px 16px #ffffff30);
       }
 
@@ -78,6 +80,9 @@ section.founder {
 
       h2 {
         margin-bottom: 0.5rem;
+      }
+      div.paragraph-wrap {
+        font-size: 1rem important;
       }
     }
   }

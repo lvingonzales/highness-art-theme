@@ -1,166 +1,287 @@
 @use "./variables" as *;
 
-header.main {
-  height: 120px;
-  background-color: $bg-color;
-  display: flex;
-
-  .container {
+@media only screen and (min-width: 0em) {
+  header.main {
+    height: 120px;
+    background-color: $bg-color;
     display: flex;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    padding: 0px 10vw;
 
-    @media (max-width: 600px) {
-      padding: 0px 5vw;
-    }
+    div.container {
+      display: grid;
+      grid-template-columns: max-content auto max-content;
+      align-items: center;
+      margin: 0px 1rem;
+      width: 100%;
+      position: relative;
 
-    a {
-      text-decoration: none;
-      margin: 10px 10px;
-      .logo-container {
+      h3 {
+        color: $primary-color;
+        flex: 1 1 0;
+        text-align: center;
+      }
+
+      a#logo-header {
+        text-decoration: none;
         display: flex;
-        align-content: center;
+        align-items: center;
+        flex: 2 1 0;
 
-        p {
-          font-size: 1.5rem;
-          margin: auto 1rem;
-          color: $primary-color;
-          font-weight: 400;
-          font-family: "Playfair", serif;
+        div.logo-container {
+          display: flex;
+          align-items: center;
+
+          img.logo.header {
+            width: auto;
+            height: 108px;
+          }
+        }
+      }
+
+      nav.nav-bar {
+        margin: auto 0px;
+
+        button.nav-button {
+          border: none;
+          background-color: transparent;
+
+          &.menu::after {
+            background-image: url("public/icons/menu-2.svg");
+          }
+
+          &.close::after {
+            background-image: url("public/icons/x.svg");
+          }
+          &::after {
+            content: "";
+            background-size: 3rem 3rem;
+            width: 3rem;
+            height: 3rem;
+            display: block;
+          }
         }
 
-        .logo.header {
-          width: auto;
-          height: 100px;
+        div.nav-container {
+          .nav-overlay {
+            position: absolute;
+            top: 100vh;
+            z-index: 10;
+            width: 100vw;
+            height: 100vh;
+            background-color: #1b1817;
+            opacity: 0;
+            visibility: inherit;
+            pointer-events: none;
+            transition:
+              opacity 300ms ease,
+              visibility 100ms linear;
+          }
+
+          visibility: hidden;
+          background-color: white;
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+          transform: translateY(-100%);
+          transition:
+            transform 500ms ease 100ms,
+            visibility 500ms linear 100ms;
+
+          &.active {
+            transform: translateY(0);
+            visibility: visible;
+            transition-delay: 0s;
+
+            div.nav-overlay {
+              opacity: 0.25;
+              visibility: inherit;
+              transition-delay: 0s;
+            }
+          }
+
+          div.nav-content {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-template-rows: max-content auto;
+            position: relative;
+            height: 100%;
+
+            .logo-container {
+              position: absolute;
+              bottom: 0;
+              transform: translate(-50%, -10%);
+              left: 50%;
+            }
+
+            button.nav-button {
+              grid-column-start: 2;
+            }
+
+            ul.nav-menu {
+              grid-column-start: 1;
+              grid-row-start: 1;
+              grid-row-end: 3;
+              margin: 0px;
+
+              display: grid;
+              grid-template-rows: repeat(auto-fit, 3rem);
+              align-items: center;
+              font-size: 1.5rem;
+              padding-left: 0px;
+
+              li.menu-item {
+                height: 100%;
+                padding-left: 1rem;
+                line-height: 3rem;
+                &.home > a::before {
+                  background-image: url("public/icons/home.svg");
+                }
+                &.shop > a::before {
+                  background-image: url("public/icons/books.svg");
+                }
+                &.about > a::before {
+                  background-image: url("public/icons/info-circle.svg");
+                }
+                &.contact > a::before {
+                  background-image: url("public/icons/message.svg");
+                }
+                &.cart > a::before {
+                  background-image: url("public/icons/shopping-cart.svg");
+                }
+
+                &.current-menu-item {
+                  background: linear-gradient(to left, transparent, $black 50%);
+                  color: $primary-color;
+
+                  a::before {
+                    background-image: none;
+                    background-color: $primary-color;
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                    mask-size: 2.25rem;
+                  }
+
+                  &.home > a::before {
+                    mask-image: url("public/icons/home.svg");
+                  }
+                  &.shop > a::before {
+                    mask-image: url("public/icons/books.svg");
+                  }
+                  &.about > a::before {
+                    mask-image: url("public/icons/info-circle.svg");
+                  }
+                  &.contact > a::before {
+                    mask-image: url("public/icons/message.svg");
+                  }
+                  &.cart > a::before {
+                    mask-image: url("public/icons/shopping-cart.svg");
+                  }
+                }
+
+                a {
+                  color: inherit;
+                  display: flex;
+
+                  &::before {
+                    content: " ";
+                    background-size: 2.25rem;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    display: block;
+                    width: 3rem;
+                    height: 3rem;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   }
+}
 
-  .nav-bar {
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    @media (max-width: 600px) {
-      .nav-button {
-        border: none;
-        background-color: transparent;
+@media only screen and (min-width: 48em) {
+  header.main {
+  }
+}
 
-        &.menu::after {
-          background-image: url("public/icons/menu-2.svg");
-        }
+@media only screen and (min-width: 64em) {
+}
 
-        &.close::after {
-          background-image: url("public/icons/x.svg");
-        }
+@media only screen and (min-width: 1280px) {
+  header.main {
+    justify-content: center;
+    div.container {
+      max-width: 1600px;
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: 1fr;
+      justify-content: center;
 
-        &::after {
-          content: "";
-          background-size: 3rem 3rem;
-          width: 3rem;
-          height: 3rem;
-          display: block;
-        }
-      }
-    }
-
-    .nav-container.mobile {
-      background-color: white;
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-
-      transform: translateY(-100%);
-      visibility: hidden;
-
-      transition: transform 0.3s ease-in-out;
-
-      .nav-content {
-        display: flex;
-        flex-direction: row-reverse;
-        position: relative;
-        height: 100%;
-
-        .nav-button.close {
-          align-self: flex-start;
-        }
-
-        .logo-container {
-          position: absolute;
-          bottom: 0;
-          transform: translate(-50%, -10%);
-          left: 50%;
-        }
+      a#logo-header {
+        grid-column-start: 2;
       }
 
-      .nav-menu {
-        margin: 0px 0px;
-        flex: 1 0 0;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        padding: 0px 5px;
-        gap: 0.5rem;
+      a#title-header {
+        grid-column-start: 1;
+        grid-row-start: 1;
+      }
 
-        .nav-item {
-          svg {
-            width: 2.5rem;
-            height: 2.5rem;
-            display: block;
+      nav.nav-bar {
+        button.nav-button {
+          display: none;
+        }
+
+        div.nav-container {
+          div.nav-overlay {
+            display: none;
           }
 
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 1.5rem;
-          height: 50px;
-          line-height: 50px;
-        }
-      }
+          position: unset;
+          visibility: visible;
+          background: none;
+          width: unset;
+          height: unset;
+          transform: none;
+          transition: none;
 
-      .nav-overlay {
-        position: absolute;
-        top: 100vh;
-        z-index: 10;
-        width: 100vw;
-        height: 100vh;
-        background-color: #1b1817;
-        opacity: 0;
-        pointer-events: none;
-      }
+          div.nav-content {
+            display: flex;
+            justify-content: center;
+            height: unset;
 
-      &.active {
-        transform: translateY(0);
-        visibility: visible;
+            .logo-container {
+              display: none;
+            }
 
-        .nav-overlay {
-          opacity: 0.25;
-        }
-      }
-    }
+            ul.nav-menu {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              font-family: "Playfair Display", serif;
+              gap: 1rem;
+              font-weight: 400;
+              list-style: none;
 
-    .nav-container.desktop {
-      .logo-container {
-        display: none;
-      }
+              li.menu-item {
+                height: unset;
+                padding: unset;
 
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 1rem;
+                &.current-menu-item {
+                  background: none;
+                }
 
-        .nav-item {
-          color: white;
-          font-size: 1.25rem;
+                a {
+                  &::before {
+                    display: none;
+                  }
+                }
 
-          svg {
-            display: none;
+                color: $primary-color;
+              }
+            }
           }
         }
       }
