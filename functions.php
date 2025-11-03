@@ -373,7 +373,8 @@ function register_highness_menus()
         array(
             'header-menu' => __('Header Menu'),
             'footer-menu-one' => __('Footer Menu One'),
-            'footer-menu-two' => __('Footer Menu Two')
+            'footer-menu-two' => __('Footer Menu Two'),
+            'footer-nav' => __('Footer Nav'),
         )
     );
 }

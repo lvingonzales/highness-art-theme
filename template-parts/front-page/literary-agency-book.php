@@ -12,7 +12,7 @@
         ?>
     </div>
     <div class="info">
-        <h2 class="sub-head">Butter and Flower</h2>
+        <h2 class="sub-head">Butter & Flower</h2>
         <p class="sub-p">Ann Allchin</p>
     </div>
     <a href="#">

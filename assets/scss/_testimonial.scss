@@ -31,11 +31,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     gap: clamp(0.5rem, 0.5rem + 2vh, 1rem);
   }
 
-  p {
-    margin: 0px;
+  .testimony-body {
+    p {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .testimony-footer {
