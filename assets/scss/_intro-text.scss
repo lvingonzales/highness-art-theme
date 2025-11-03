@@ -1,45 +1,94 @@
 @use "./variables" as *;
-.intro{
-    display: flex;
-    justify-content: center;
-    .container{
+
+@media only screen and (min-width: 0em) {
+  section.intro {
+    margin: 2rem 0px;
+    div.container {
+      display: flex;
+      flex-direction: column;
+      width: $container-1440;
+
+      div.image {
         display: flex;
-        flex-direction: column;
-        width: $container-1440;
-
-        @media (min-width:1200px) {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-
-            .image {
-                grid-area: 2 / 2 / 3 / 3;
-            }
-            .title {
-                grid-column: 1 / 3;
-                text-align: left !important;
-            }
-            .content {
-                grid-area: 2 / 1 / 3 / 2;
-            }
+        justify-content: center;
+        margin-bottom: 1rem;
+        img {
+          width: 100%;
+          height: auto;
         }
-        .image {
-            display: flex;
-            justify-content: center;
-            img {
-                width: min(600px, 100%);
-                height: min(600px, 100%);
-            }
-        }
-        .title {
-            text-align: center;
-        }
-        .content {
-            padding: $padding-lr;
-            font-weight: 500;
-            text-align: justify;
-            p {
-                margin: 0px;
-            }
-        }
+      }
+      div.title {
+        text-align: center;
+      }
     }
+  }
 }
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 64em) {
+  section.intro {
+    div.container {
+      div.title {
+        width: 90%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  section.intro {
+    div.container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: max-content auto;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+      max-width: 1500px;
+
+      div.image {
+        grid-column-start: 2;
+        grid-row-start: 2;
+
+        img {
+            width: 75%;
+        }
+      }
+
+      div.title {
+        width: 90%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        margin: 0px;
+      }
+
+      div.paragraph-wrap {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+// @media (min-width: 1200px) {
+//
+
+//   .image {
+//     grid-area: 2 / 2 / 3 / 3;
+//   }
+//   .title {
+//     grid-column: 1 / 3;
+//     text-align: left !important;
+//   }
+//   .content {
+//     grid-area: 2 / 1 / 3 / 2;
+//   }
+// }

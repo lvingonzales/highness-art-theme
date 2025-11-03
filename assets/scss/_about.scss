@@ -13,13 +13,6 @@ main.about-page {
     margin-bottom: 0.5rem;
   }
 
-  div.paragraph-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0px 1rem;
-  }
-
   p {
     font-size: 1.25rem;
   }
@@ -80,9 +73,6 @@ section.founder {
 
       h2 {
         margin-bottom: 0.5rem;
-      }
-      div.paragraph-wrap {
-        font-size: 1rem important;
       }
     }
   }
@@ -178,9 +168,6 @@ section.employees {
 }
 
 @media (max-width: 1200px) {
-  div.paragraph-wrap {
-    padding: 0px;
-  }
   section.founder {
     div.founder-wrap {
       gap: 0.5rem;

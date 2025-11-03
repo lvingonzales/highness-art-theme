@@ -19,10 +19,8 @@ $products = wc_get_products($args);
                 <?php foreach ($products as $product): ?>
                     <li class="featured-item">
                         <?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $product->get_id() ), 'full'); ?>
-                        <a class="feature-img-link" href="<?php echo get_permalink( $product->get_id()); ?>">
-                            <div class="image-wrap" style="background: no-repeat url('<?php echo $image_url[0]; ?>'); background-size: cover; background-position: center;">
-                            </div>
-                        </a>
+                        <div class="image-wrap" style="background: no-repeat url('<?php echo $image_url[0]; ?>'); background-size: cover; background-position: center;">
+                        </div>
                         <div class="card">
                             <div class="text-wrap">
                                 <div class="excerpt">
@@ -45,7 +43,6 @@ $products = wc_get_products($args);
                             </div>
                             
                             <div class="btn-wrap">
-                                <p>Interested?</p>
                                 <a href="<?php echo get_permalink( $product->get_id()); ?>" class="button">See More</a>
                             </div>
                         </div>
