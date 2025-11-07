@@ -38,6 +38,8 @@ do_action( 'woocommerce_before_main_content' );
 do_action( 'woocommerce_shop_loop_header' );
 ?>
 <div id="shop-container">
+	<div class="filter-wrap">
+	<div class="span-wrap dropdown-btn"><span class="filter-btn">Filter</span></div>
 	<?php
 if ( woocommerce_product_loop() ) {
 
@@ -49,7 +51,8 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
 	do_action( 'woocommerce_before_shop_loop' );
-
+	echo '</div>';
+	echo '<div class="products-wrap">';
 	woocommerce_product_loop_start();
 
 	if ( wc_get_loop_prop( 'total' ) ) {
@@ -66,7 +69,7 @@ if ( woocommerce_product_loop() ) {
 	}
 
 	woocommerce_product_loop_end();
-
+	echo '</div>';
 	/**
 	 * Hook: woocommerce_after_shop_loop.
 	 *

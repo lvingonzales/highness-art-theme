@@ -1,10 +1,5 @@
 @use "../variables" as *;
 
-ul.products {
-  display: flex;
-  flex-direction: column;
-}
-
 li.product {
   width: 250px !important;
   padding: 0.5rem 1rem !important;
@@ -76,4 +71,32 @@ li.product {
       flex-direction: column;
     }
   }
+}
+
+@media only screen and (min-width: 0em) {
+  div.products-wrap {
+    ul.products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill);
+      padding: 0px;
+      justify-content: center;
+      gap: 1rem;
+
+      li.product {
+        h2.woocommerce-loop-product__title {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+  }
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 64em) {
+}
+
+@media only screen and (min-width: 1280px) {
 }

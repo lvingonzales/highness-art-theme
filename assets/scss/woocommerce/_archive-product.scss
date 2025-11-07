@@ -1,18 +1,113 @@
 @use "../variables" as *;
 
-@media (min-width: 1200px) {
-  #shop-container {
-    display: grid;
-    grid-template-columns: clamp(300px, 20vw, 400px) 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 1rem;
+// @media (min-width: 1200px) {
+//   #shop-container {
+//     display: grid;
+//     grid-template-columns: clamp(300px, 20vw, 400px) 1fr;
+//     grid-template-rows: 1fr 1fr;
+//     padding: 1rem;
 
-    .products {
-      grid-area: 1 / 2 / 3 / 3;
+//     .products {
+//       grid-area: 1 / 2 / 3 / 3;
+//     }
+
+//     .products-container {
+//         padding: 1rem;
+//     }
+//   }
+// }
+
+@media only screen and (min-width: 0em) {
+  header.woocommerce-products-header {
+    margin: 0px 2rem;
+  }
+
+  div#shop-container {
+    div.span-wrap {
+      margin: 0px 2rem;
+      border-bottom: 1px solid $black;
+
+      &::after {
+        content: " ";
+        background-size: contain;
+        background-position: bottom;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      span.filter-btn {
+        font-size: 1.25rem;
+      }
     }
+    div.woof {
+      a.chosen-single,
+      input[type="search"],
+      ul.chosen-choices {
+        border-radius: 4px;
+      }
+    }
+    a.woof_btn_default {
+      margin: 0px 2rem;
+      font-size: 1.25rem;
+      font-family: "Playfair Display", serif;
+      white-space: nowrap;
+      border-bottom: 1px solid $black;
 
-    .products-container {
-        padding: 1rem;
+      &::after {
+        content: " ";
+        background-size: contain;
+        background-position: bottom;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+      }
+
+      &.woof_show_auto_form {
+        &::after {
+          background-image: url("public/icons/chevron-right.svg");
+        }
+      }
+
+      &.woof_hide_auto_form {
+        &::after {
+          background-image: url("public/icons/chevron-down.svg");
+        }
+      }
     }
   }
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 64em) {
+}
+
+@media only screen and (min-width: 1280px) {
+  div#shop-container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 2rem auto;
+
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: max-content auto;
+    position: relative;
+
+    div.span-wrap {
+      margin: 1rem 0px;
+    }
+
+    div.woof {
+      min-width: 300px;
+      position: sticky;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    div.products-wrap {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+  }
+
 }

@@ -24,6 +24,14 @@ if (!function_exists('highness_theme_setup')):
             true
         );
 
+        wp_enqueue_script(
+            "highnessart_dropdowns_script",
+            get_stylesheet_directory_uri() . '/assets/js/dropdowns.js',
+            array(),
+            '1.0.0',
+            true
+        );
+
         if (is_front_page()) {
             wp_enqueue_script(
                 "highnessart_hero_script",
@@ -187,25 +195,31 @@ add_filter('woocommerce_paypal_payments_single_product_renderer_hook', function 
 
 function highness_product_info()
 {
+    woocommerce_template_single_rating();
+    woocommerce_template_single_price();
+
+    echo "<div class='currency-notice'>";
+    echo "<p>All prices in Canadian Dollars (CAD) </p>";
+    echo "</div>";
+
+    woocommerce_template_single_add_to_cart();
+}
+
+function highness_product_title()
+{
     global $product;
 
     echo '<div id="title">';
     woocommerce_template_single_title();
 
-    $author = $product->get_attribute('pa_book-author');
-    if (!empty($author)) {
-        echo '<p class="product-author">';
-        echo 'by ';
-        echo esc_html($author);
-        echo '</p>';
+    $terms = get_the_terms($product->get_id(), 'authors');
+    if (!empty($terms)) {
+        echo "by " . esc_html($terms[0]->name);
     }
     echo '</div>';
-
-    woocommerce_template_single_rating();
-    woocommerce_template_single_price();
-    woocommerce_template_single_add_to_cart();
 }
 
+add_action('highness_single_product_title', 'highness_product_title');
 add_action('highness_before_product_summary', 'highness_product_info');
 
 
@@ -225,6 +239,13 @@ if (!function_exists('highness_author_tab')) {
     }
 }
 
+if (!function_exists('highness_artist_tab')) {
+    function highness_artist_tab()
+    {
+        wc_get_template('single-product/tabs/artist.php');
+    }
+}
+
 
 add_filter('woocommerce_product_tabs', 'woo_edit_tabs', 98);
 
@@ -235,9 +256,15 @@ function woo_edit_tabs($tabs)
     $tabs['description']['callback'] = 'highness_tab_content';
 
     $tabs['author'] = array(
-        'title' => __('About this author', 'woocommerce'),
+        'title' => __('About the author(s)', 'woocommerce'),
         'priority' => 10,
         'callback' => 'highness_author_tab',
+    );
+
+    $tabs['artist'] = array(
+        'title' => __('About the artist(s)', 'woocommerce'),
+        'priority' => 11,
+        'callback' => 'highness_artist_tab',
     );
 
     return $tabs;
@@ -303,8 +330,7 @@ function edit_taxonomy_image_field($term, $taxonomy)
     <tr class="form-field term-group-wrap">
         <th scope="row"><label for="taxonomy-image-id"><?php _e('Image', 'woocommerce'); ?></label></th>
         <td>
-            <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id"
-                value="<?php echo esc_attr($image_id); ?>">
+            <input type="hidden" id="taxonomy-image-id" name="taxonomy-image-id" value="<?php echo esc_attr($image_id); ?>">
             <div id="taxonomy-image-wrapper">
                 <?php if ($image_id): ?>
                     <?php echo wp_get_attachment_image($image_id, 'thumbnail'); ?>
@@ -414,3 +440,7 @@ function wcsuccess_save_subtitle_field($post_id)
     update_post_meta($post_id, '_product_subtitle', $subtitle);
 }
 add_action('woocommerce_process_product_meta', 'wcsuccess_save_subtitle_field');
+
+remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
+add_action('woocommerce_cart_is_empty', 'highness_empty_cart_message', 10);
+

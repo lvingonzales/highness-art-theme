@@ -7,6 +7,10 @@
  */
 
 defined('ABSPATH') || exit;
+if ( WC()->cart->is_empty() ) {
+    wc_get_template( 'woocommerce/cart/cart-empty.php' );
+    return;
+}
 
 do_action('woocommerce_before_cart'); ?>
 
@@ -14,7 +18,7 @@ do_action('woocommerce_before_cart'); ?>
 	<?php do_action('woocommerce_before_cart_table'); ?>
 	<?php do_action('woocommerce_before_cart_contents'); ?>
 
-	<div class="cart-items-container">
+	<div class="cart-items-container woocommerce-cart-form__contents">
 		<?php
 		foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
 			$_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
@@ -91,20 +95,13 @@ do_action('woocommerce_before_cart'); ?>
 							<div class="product-author">
 								<p>
 									<?php
-									$attribute_name = 'pa_book-author'; // global attribute slug
-									$terms = wp_get_post_terms($_product->get_id(), $attribute_name);
-									if (!is_wp_error($terms) && !empty($terms)) {
-										// Product has this attribute
-										foreach ($terms as $term) {
-											echo $term->name; // the attribute value
-										}
-									}
+									$terms = get_the_terms($_product->get_id(), 'authors');
+									echo esc_html($terms[0]->name);
 									?>
 								</p>
 							</div>
 						</div>
 						<div class="product-quantity">
-							<span>Quantity</span>
 							<?php
 							if ($_product->is_sold_individually()) {
 								$min_quantity = 1;
@@ -222,8 +219,10 @@ do_action('woocommerce_before_cart'); ?>
 			<?php do_action('woocommerce_cart_totals_after_order_total'); ?>
 		</div>
 	</div>
-	<?php do_action('woocommerce_after_cart_contents'); ?>
+	<div class="add-to-cart-wrap">
+		<?php do_action('woocommerce_after_cart_contents'); ?>
 
-	<?php do_action('woocommerce_proceed_to_checkout'); ?>
-	<?php do_action('woocommerce_after_cart'); ?>
+		<?php do_action('woocommerce_proceed_to_checkout'); ?>
+		<?php do_action('woocommerce_after_cart'); ?>
+	</div>
 </form>

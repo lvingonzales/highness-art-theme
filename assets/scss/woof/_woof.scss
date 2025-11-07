@@ -49,3 +49,55 @@ span.irs-to::before {
     }
   }
 }
+
+@media only screen and (min-width: 0em) {
+  div.filter-wrap {
+    position: relative;
+
+    span.filter-btn {
+      pointer-events: auto;
+    }
+
+    div.woof {
+      position: absolute;
+      top: 1.5rem;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 64em) {
+}
+
+@media only screen and (min-width: 1280px) {
+  div.filter-wrap {
+    position: unset;
+    
+    span.filter-btn {
+      pointer-events: none;
+    }
+
+    div.woof {
+      position: unset;
+      visibility: visible;
+      opacity: 1;
+      background-color: transparent;
+
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

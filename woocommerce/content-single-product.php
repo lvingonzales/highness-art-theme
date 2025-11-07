@@ -31,9 +31,14 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'product-single', $product ); ?>>
 
 	<div id="product-info-container">
+		<div class="product-title">
+			<?php
+			do_action('highness_single_product_title');
+			?>
+		</div>
 		<div class="product-images">
 			<?php
 			/**
