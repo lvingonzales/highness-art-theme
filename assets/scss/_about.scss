@@ -1,181 +1,168 @@
 @use "./variables" as *;
 
-main.about-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  margin: 4rem 0px;
-
-  h1,
-  h2,
-  h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1.25rem;
-  }
-}
-
-section.intro-about,
-section.vision,
-section.employees {
-  width: min(100%, 1200px);
-}
-
-@media (max-width: 1200px) {
-  div.intro-wrap,
-  div.founder-info-wrap,
-  div.vision-wrap,
-  div.employee-wrap {
-    padding: 0px clamp(1rem, 5vw, 4rem);
-  }
-}
-
-section.founder {
-  background-color: $black;
-  color: $primary-color;
-  width: 100vw;
-
-  div.founder-wrap {
-    width: min(100vw, 1200px);
-    max-height: 500px;
+@media only screen and (min-width: 0em) {
+  section.intro-about,
+  section.vision,
+  section.employees {
+    width: 90%;
+    max-width: 1600px;
     margin: 0px auto;
-
-    display: flex;
-    gap: 2rem;
-
-    div.image-wrap {
-      position: relative;
-      display: flex;
-      flex: 1 1 0;
-
-      img.founder-img {
-        max-height: 200px;
-        filter: drop-shadow(0px 0px 16px #ffffff30);
-      }
-
-      div.image-caption {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-
-        h3 {
-          margin-bottom: 0.5rem;
-        }
-      }
-    }
-
-    div.founder-info-wrap {
-      margin: 4rem 0px;
-      flex: 1.5 1 0;
-
-      h2 {
-        margin-bottom: 0.5rem;
-      }
-    }
   }
-}
 
-section.employees {
-  ul.employee-list {
+  .about-page {
     display: flex;
-    list-style: none;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    margin: 2rem 0px;
 
-    li.collab-card {
-      border: 1px solid $black-50;
-      border-radius: 0.5rem;
-      height: 500px;
-      width: 300px;
-      padding: 1rem;
-      position: relative;
-      display: flex;
-      background: url("public/images/collab-bg.png");
+    .paragraph-wrap {
+      width: unset;
+      margin: 0px 0px;
+    }
 
-      h3 {
-        margin: 0px;
-        margin-bottom: 0.5rem;
+    h1,
+    h2,
+    h3 {
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
 
-        &.light {
-          font-weight: 500;
-        }
-      }
+    .founder {
+      background-color: $black;
+      color: $primary-color;
+      width: 100vw;
 
-      div.deco-bg {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 40%;
-        border-top: 1px solid $black-50;
-        z-index: 1;
-        background-color: white;
-        border-radius: 0px 0px 0.5rem 0.5rem;
-      }
-
-      a {
+      .founder-wrap {
+        width: 90%;
+        max-width: 1280px;
+        margin: 0px auto;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        text-align: center;
-        flex: 1 1 0;
-        z-index: 1000;
-        gap: 1rem;
 
-        &:hover {
-          text-decoration: underline;
+        .image-wrap {
+          position: relative;
+          display: flex;
+          flex: 1 1 0;
+          .founder-img {
+            filter: drop-shadow(0px 0px 16px #ffffff30);
+          }
+          .image-caption {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+
+            h3 {
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+        div.founder-info-wrap {
+          flex: 1.5 1 0;
+          margin: 1rem 0px;
+
+          h2 {
+            margin-bottom: 0.5rem;
+          }
         }
       }
-      img.collab-img {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
+    }
+
+    section.employees {
+      ul.employee-list {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0px;
+
+        li.collab-card {
+          border: 1px solid $black-50;
+          border-radius: 0.5rem;
+          height: 500px;
+          width: 300px;
+          padding: 1rem;
+          position: relative;
+          display: flex;
+          background: url("public/images/collab-bg.png");
+
+          h3 {
+            margin: 0px;
+            margin-bottom: 0.5rem;
+            text-align: center;
+
+            &.light {
+              font-weight: 500;
+            }
+          }
+
+          div.deco-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            border-top: 1px solid $black-50;
+            z-index: 1;
+            background-color: white;
+            border-radius: 0px 0px 0.5rem 0.5rem;
+          }
+
+          a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            text-align: center;
+            flex: 1 1 0;
+            z-index: 1000;
+            gap: 1rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          img.collab-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 48em) {
+  .about-page {
+    .founder {
+      .founder-wrap {
+        .image-wrap {
+          justify-content: center;
+          .image-caption {
+            right: 2rem;
+          }
+        }
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-align: left;
+    }
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .about-page {
+    .founder {
+      .founder-wrap {
+        flex-direction: row;
       }
     }
   }
 }
 
-@media (max-width: 600px) {
-  div.paragraph-wrap {
-    text-align: justify;
-  }
-
-  section.founder {
-    div.founder-wrap {
-      flex-direction: column;
-      gap: 0px;
-
-      div.founder-info-wrap {
-        margin-top: 0px !important;
-      }
-    }
-  }
-
-  section.employees {
-    div.employee-wrap {
-      div.list-wrap {
-        ul.employee-list {
-          padding: 0px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1200px) {
-  section.founder {
-    div.founder-wrap {
-      gap: 0.5rem;
-      div.image-wrap {
-        div.image-caption {
-          right: 0;
-        }
-      }
-    }
-  }
+@media only screen and (min-width: 1280px) {
 }

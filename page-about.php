@@ -34,7 +34,7 @@ $groups = array($vishana_group, $magda_group, $joseph_group, $ann_group);
                     </div>
                 </div>
                 <div class="founder-info-wrap">
-                    <h2>Meet the founder</h2>
+                    <h2>Meet the Founder</h2>
                     <div class="paragraph-wrap">
                         <?php the_field("founder_text"); ?>
                     </div>

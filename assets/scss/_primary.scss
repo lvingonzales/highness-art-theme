@@ -35,7 +35,8 @@ body {
 .container {
 }
 
-.button {
+.button,
+.submit {
   padding: 0px !important;
   border-radius: 4px !important;
   border: none !important;
@@ -45,7 +46,8 @@ body {
   transition: all 500ms ease;
 }
 
-.button:hover {
+.button:hover,
+.submit:hover {
   background-color: $primary-color-hover;
   color: white;
 }
@@ -114,7 +116,8 @@ a:visited {
 }
 
 .book-btn,
-.button {
+.button,
+.submit {
   color: $black;
   display: block;
   text-align: center;
@@ -127,28 +130,42 @@ a:visited {
 @media only screen and (min-width: 0em) {
   .paragraph-wrap {
     line-height: 1.65;
-    margin: 0px 1rem;
     word-wrap: break-word;
+    width: 90%;
+    margin:0px auto;
+
+    p{
+      margin-bottom: 1rem;
+    }
   }
 
   div.woocommerce-notices-wrapper {
     margin: 1rem 0px;
   }
+
+  .submit {
+    max-width: 400px;
+  }
+
+  .site {
+    position: relative;
+  }
+
+  header.main {
+    position: sticky;
+    align-self: flex-start;
+    top: 0;
+    z-index: 999999999;
+    width: 100%;
+  }
 }
 
+@media only screen and (min-width: 0em) {
+}
 @media only screen and (min-width: 48em) {
-  .paragraph-wrap {
-    margin: 0px 3.35rem;
-  }
 }
 
 @media only screen and (min-width: 64em) {
-  .paragraph-wrap {
-    width: 90%;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @media only screen and (min-width: 1280px) {

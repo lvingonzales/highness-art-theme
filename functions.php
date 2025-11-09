@@ -441,6 +441,6 @@ function wcsuccess_save_subtitle_field($post_id)
 }
 add_action('woocommerce_process_product_meta', 'wcsuccess_save_subtitle_field');
 
-remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
-add_action('woocommerce_cart_is_empty', 'highness_empty_cart_message', 10);
+// remove_action('woocommerce_cart_is_empty', 'wc_empty_cart_message', 10);
+// add_action('woocommerce_cart_is_empty', 'highness_empty_cart_message', 10);
 

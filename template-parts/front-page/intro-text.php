@@ -28,7 +28,7 @@
         </div>
         <div class="paragraph-wrap">
             <p>
-            <?php echo esc_html($home_text["home_desc"]); ?>
+            <?php echo $home_text["home_desc"]; ?>
             </p>
         </div>
     </div>

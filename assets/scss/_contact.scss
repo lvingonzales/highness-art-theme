@@ -1,0 +1,52 @@
+@use "./variables" as *;
+
+@media only screen and (min-width: 0em) {
+    #contact-form {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+
+        .wpcf7-form {
+            label.required {
+                &:before {
+                    content: "* ";
+                    color: red;
+                }
+            }
+
+            p{
+                margin-bottom: 0.5rem;
+            }
+
+            input[type = "text"],
+            input[type = "email"],
+            input[type = "tel"] {
+                height: 2rem;
+                width: 100%;
+                max-width: 250px;
+                border: 1px solid $black-50;
+                border-radius: 4px;
+            }
+
+            textarea {
+                width: 100%;
+                font-size: 1rem;
+                font-family: "Open Sans", sans-serif;
+            }
+
+            .wpcf7-submit {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 48em) {
+}
+
+@media only screen and (min-width: 64em) {
+}
+
+@media only screen and (min-width: 1280px) {
+}
