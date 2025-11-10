@@ -27,7 +27,7 @@ $products = wc_get_products($args);
                                     <h3><?php echo esc_html($product->get_short_description()) ?></h3>
                                 </div>
                                 <div class="title">
-                                    <a href="">
+                                    <a href="<?php echo esc_attr($product->get_permalink())?>">
                                         <h2><?php echo esc_html($product->get_name()) ?></h2>
                                     </a>
                                     <p>

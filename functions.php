@@ -46,58 +46,7 @@ if (!function_exists('highness_theme_setup')):
 endif;
 add_action('wp_enqueue_scripts', 'highness_theme_setup');
 
-add_action('wp_enqueue_scripts', 'plugin_style_overrides');
-function plugin_style_overrides()
-{
-    if (is_shop()) {
-        wp_enqueue_style(
-            "highnessart_woof_style",
-            get_stylesheet_directory_uri() . "/public/css/woof/woof.css"
-        );
-    }
-}
-
-if (!function_exists('highness_front_page_enqueues')) {
-    function highness_front_page_enqueues()
-    {
-        if (is_front_page()) {
-
-            wp_enqueue_style(
-                'highness_featured_hero_style',
-                get_stylesheet_directory_uri() . '/public/css/featured-hero.css'
-            );
-
-            wp_enqueue_style(
-                'highness_intro_text_style',
-                get_stylesheet_directory_uri() . '/public/css/intro-text.css'
-            );
-
-            wp_enqueue_style(
-                'highness_lit_agency_section_style',
-                get_stylesheet_directory_uri() . '/public/css/literary-agency-section.css'
-            );
-
-            wp_enqueue_style(
-                'highness_testimonials_style',
-                get_stylesheet_directory_uri() . '/public/css/testimonial.css'
-            );
-        }
-    }
-}
-
 add_action('wp_enqueue_scripts', 'highness_front_page_enqueues');
-
-if (!function_exists('highness_cart_page_enqueues')) {
-    function highness_cart_page_enqueues()
-    {
-        if (is_cart()) {
-            wp_enqueue_style(
-                'highness_cart_style',
-                get_stylesheet_directory_uri() . '/public/css/woocommerce/cart.css'
-            );
-        }
-    }
-}
 
 add_action('wp_enqueue_scripts', 'highness_cart_page_enqueues');
 
@@ -266,6 +215,27 @@ function woo_edit_tabs($tabs)
         'priority' => 11,
         'callback' => 'highness_artist_tab',
     );
+
+    return $tabs;
+}
+
+add_filter( 'woocommerce_product_tabs', 'hide_empty_product_tabs', 98 );
+function hide_empty_product_tabs( $tabs ) {
+    global $product;
+
+    foreach ( $tabs as $key => $tab ) {
+        // If tab has a callback function, run it and check output
+        if ( isset( $tab['callback'] ) && is_callable( $tab['callback'] ) ) {
+            ob_start();
+            call_user_func( $tab['callback'], $key, $tab );
+            $content = trim( ob_get_clean() );
+
+            // Remove tab if content is empty
+            if ( empty( $content ) ) {
+                unset( $tabs[$key] );
+            }
+        }
+    }
 
     return $tabs;
 }

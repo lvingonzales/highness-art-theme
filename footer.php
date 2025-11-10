@@ -1,7 +1,7 @@
 </div>
 <footer>
     <div class="footer-container">
-        <div class="footer-title"><h3>Highness Global Publishing House</h3></div>
+        <div class="footer-title"><h3>HIGHNESS GLOBAL PUBLISHING HOUSE</h3></div>
         <div class="footer-body">
             <div class="footer-section links">
                 <div class="section contact dropdown">
@@ -42,7 +42,7 @@
                                 <path
                                     d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" />
                             </svg>
-                            info@highnesglobal.com
+                            info@highnessglobal.com
                         </li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="section socials">
                     <span class="socials-title">Follow Us</span>
                     <div class="icons">
-                        <a href="#">
+                        <a href="https://www.instagram.com/highnessglobal/">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="currentColor"
                                 class="icon icon-tabler icons-tabler-filled icon-tabler-brand-instagram">
@@ -96,7 +96,7 @@
                                     d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" />
                             </svg>
                         </a>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/company/highnesscapital/">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="currentColor"
                                 class="icon icon-tabler icons-tabler-filled icon-tabler-brand-linkedin">
@@ -133,7 +133,7 @@
                     ?>
             </div>
             <div class="footer-end-section copyright">
-                <span>Copyright Text</span>
+                <span>© 2025 Highness Global Publishing House</span>
             </div>
         </div>
     </div>
