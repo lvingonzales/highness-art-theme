@@ -46,10 +46,6 @@ if (!function_exists('highness_theme_setup')):
 endif;
 add_action('wp_enqueue_scripts', 'highness_theme_setup');
 
-add_action('wp_enqueue_scripts', 'highness_front_page_enqueues');
-
-add_action('wp_enqueue_scripts', 'highness_cart_page_enqueues');
-
 add_action('after_setup_theme', 'setup_woocommerce_support');
 function setup_woocommerce_support()
 {

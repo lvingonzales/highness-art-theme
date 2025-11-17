@@ -458,7 +458,9 @@ a:visited {
     padding: 0px 0px;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
   footer div.footer-container div.footer-end .footer-end-section.copyright {
     display: flex;
