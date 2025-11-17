@@ -18,7 +18,11 @@
         }
       }
       div.title {
-        text-align: center;
+        width: 90%;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
       }
     }
   }
@@ -31,11 +35,6 @@
   section.intro {
     div.container {
       div.title {
-        width: 90%;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
       }
     }
   }

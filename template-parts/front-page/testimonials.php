@@ -4,15 +4,19 @@
             <div class="testimony-container">
                 <div class="testimony-body">
                     <p>
-                        Highness is not afraid to take risks. To create something that is beautiful and that has staying
-                        power for years to come takes a clear vision and tenacity, the definition of Amana Manori, the
-                        Founder of Highness
+                        <i>
+                            Highness is not afraid to take risks. To create something that is beautiful and that has staying
+                            power for years to come takes a clear vision and tenacity, the definition of Amana Manori, the
+                            Founder of Highness
+                        </i>
                     </p>
                     <p>
-                        Ann Allchin, the author of STONED, is a dedicated researcher, right down to the delicious
-                        recipes.
+                        <i>
+                            Ann Allchin, the author of STONED, is a dedicated researcher, right down to the delicious
+                            recipes.
+                        </i>
                     </p>
-                    <p>STONED is mouth-watering. Informative. Beautiful.</p>
+                    <p><i>STONED is mouth-watering. Informative. Beautiful.</i></p>
                 </div>
                 <div class="testimony-footer">
                     <p class="bold author">
@@ -25,22 +29,24 @@
             <div class="testimony-container">
                 <div class="testimony-body">
                     <p>
-                        STONED is a feast—visually, conceptually, and sensorially. Ann Allchin doesn’t just teach you
-                        how to cook with cannabis; she reimagines the entire experience, layering it with history,
-                        culture, and artistry.
-
-
+                        <i>
+                            STONED is a feast—visually, conceptually, and sensorially. Ann Allchin doesn’t just teach you
+                            how to cook with cannabis; she reimagines the entire experience, layering it with history,
+                            culture, and artistry.
+                        </i>
                     </p>
                     <p>
-                        The book itself is stunning—lush photography, exquisite design, a tactile pleasure. As someone
-                        obsessed with altered states and aesthetic beauty, I found it utterly electric
+                        <i>
+                            The book itself is stunning—lush photography, exquisite design, a tactile pleasure. As someone
+                            obsessed with altered states and aesthetic beauty, I found it utterly electric
+                        </i>
                     </p>
                 </div>
                 <div class="testimony-footer">
                     <p class="bold author">
                         Arnie Guha
                     </p>
-                    <p>CEO and Founder of John Doe's Company</p>
+                    <p>Acid4Yuppies</p>
                 </div>
             </div>
         </div>

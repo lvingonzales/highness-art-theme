@@ -783,11 +783,6 @@ a:visited {
     height: auto;
   }
   section.intro div.container div.title {
-    text-align: center;
-  }
-}
-@media only screen and (min-width: 64em) {
-  section.intro div.container div.title {
     width: 90%;
     max-width: 900px;
     margin-left: auto;
@@ -1221,7 +1216,6 @@ span.irs-to::before {
   flex-direction: column;
   gap: 0.5rem;
   flex: 1 1 0;
-  max-width: 200px;
 }
 .woocommerce-cart-form .coupon #coupon_code {
   height: 40px;
@@ -1236,15 +1230,18 @@ span.irs-to::before {
 }
 .woocommerce-cart-form .after-cart-contents {
   display: flex;
+  flex-direction: column-reverse;
   gap: 0.5rem;
   justify-content: space-between;
+}
+.woocommerce-cart-form .after-cart-contents .woocommerce-remove-coupon {
+  color: red;
 }
 .woocommerce-cart-form .after-cart-contents .cart_totals {
   flex: 1 1 0;
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  max-width: 200px;
 }
 .woocommerce-cart-form .after-cart-contents .cart_totals div {
   display: flex;
@@ -1330,6 +1327,7 @@ span.irs-to::before {
   }
   div.woocommerce form.woocommerce-cart-form div.after-cart-contents {
     grid-area: 1/2/2/3;
+    min-width: 450px;
   }
   div.woocommerce form.woocommerce-cart-form div.add-to-cart-wrap {
     grid-area: 2/2/3/3;

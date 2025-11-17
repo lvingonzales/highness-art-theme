@@ -24,7 +24,7 @@
             ?>
         </div>
         <div class="title">
-            <h1> <?php echo esc_html($home_text["home_title"]); ?> </h1>
+            <h2> <?php echo esc_html($home_text["home_title"]); ?> </h2>
         </div>
         <div class="paragraph-wrap">
             <p>

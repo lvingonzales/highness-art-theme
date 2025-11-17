@@ -77,7 +77,6 @@
     flex-direction: column;
     gap: 0.5rem;
     flex: 1 1 0;
-    max-width: 200px;
     #coupon_code {
       height: 40px;
       border: 1px solid $black-50;
@@ -94,14 +93,18 @@
 
   .after-cart-contents {
     display: flex;
+    flex-direction: column-reverse;
     gap: 0.5rem;
     justify-content: space-between;
+
+    .woocommerce-remove-coupon {
+      color: red;
+    }
     .cart_totals {
       flex: 1 1 0;
       font-size: 18px;
       display: flex;
       flex-direction: column;
-      max-width: 200px;
 
       div {
         display: flex;
@@ -229,6 +232,7 @@
 
       div.after-cart-contents {
         grid-area: 1 / 2 / 2 / 3;
+        min-width: 450px;
       }
 
       div.add-to-cart-wrap {
