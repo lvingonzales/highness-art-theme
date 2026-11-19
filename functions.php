@@ -197,7 +197,7 @@ add_filter('woocommerce_product_tabs', 'woo_edit_tabs', 98);
 function woo_edit_tabs($tabs)
 {
 
-    $tabs['description']['title'] = __('About this book');
+    $tabs['description']['title'] = __('About this Product');
     $tabs['description']['callback'] = 'highness_tab_content';
 
     $tabs['author'] = array(
