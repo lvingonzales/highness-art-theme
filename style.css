@@ -2,7 +2,7 @@
 Theme Name: Highness Art Theme
 Author: Liam Gonzales
 Description: Theme developed for Highness Global Publishing House
-Version: 1.0
+Version: 1.1
 */
 :root {
   font-size: 16px;
@@ -314,29 +314,59 @@ a:visited {
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 500ms ease, visibility 500ms linear;
+    transition:
+      opacity 500ms ease,
+      visibility 500ms linear;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item.active {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item.active {
     opacity: 1;
     visibility: visible;
     transition-delay: 0s;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.image-wrap {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.image-wrap {
     flex: 1 1 0;
     height: 100%;
     background-repeat: no-repeat;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.card {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.card {
     flex: 0.5 1 0;
     padding: 1rem;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.card div.text-wrap {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.card
+    div.text-wrap {
     margin-bottom: 1rem;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.card div.text-wrap div.excerpt {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.card
+    div.text-wrap
+    div.excerpt {
     margin-bottom: 0.5rem;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.card div.text-wrap p.desc {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.card
+    div.text-wrap
+    p.desc {
     margin: 0.5rem 0px;
   }
 }
@@ -344,7 +374,11 @@ a:visited {
   section.featured-hero div.section-wrap ul.featured-list li.featured-item {
     flex-direction: row;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.card {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.card {
     max-width: 40%;
     padding: 1.5rem;
   }
@@ -353,7 +387,11 @@ a:visited {
   section.featured-hero div.section-wrap ul.featured-list {
     height: 800px;
   }
-  section.featured-hero div.section-wrap ul.featured-list li.featured-item div.card {
+  section.featured-hero
+    div.section-wrap
+    ul.featured-list
+    li.featured-item
+    div.card {
     max-width: 25%;
     padding: 2rem;
   }
@@ -383,10 +421,19 @@ a:visited {
   footer div.footer-container div.footer-body div.footer-section.links {
     flex-direction: column;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section {
     margin-bottom: 1rem;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section div.section-title-container {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    div.section-title-container {
     border-top: 1px solid white;
     border-bottom: 1px solid white;
     padding: 0.5rem 0px;
@@ -394,34 +441,71 @@ a:visited {
     justify-content: space-between;
     pointer-events: auto;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section div.section-title-container svg {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    div.section-title-container
+    svg {
     display: block;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section div.section-title-container div.section-title {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    div.section-title-container
+    div.section-title {
     font-size: 1.25rem;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section.active ul.section-list {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section.active
+    ul.section-list {
     visibility: visible;
     max-height: 200px;
     transition-delay: 0s;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section ul.section-list {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    ul.section-list {
     list-style: none;
     padding: 0px;
     margin: 0px;
     visibility: hidden;
     max-height: 0px;
-    transition: max-height 300ms ease-in-out, visibility 100ms linear;
+    transition:
+      max-height 300ms ease-in-out,
+      visibility 100ms linear;
     overflow: hidden;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section ul.section-list li {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    ul.section-list
+    li {
     font-size: 1rem;
     margin: 0.5rem 0px;
     display: flex;
     align-items: center;
     gap: 1rem;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section ul.section-list li svg {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    ul.section-list
+    li
+    svg {
     min-width: 2rem;
     min-height: 2rem;
   }
@@ -431,19 +515,40 @@ a:visited {
     justify-content: center;
     gap: 1.5rem;
   }
-  footer div.footer-container div.footer-body div.footer-section.icons .section.socials {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.icons
+    .section.socials {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  footer div.footer-container div.footer-body div.footer-section.icons .section.socials .icons a:visited {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.icons
+    .section.socials
+    .icons
+    a:visited {
     color: white;
   }
-  footer div.footer-container div.footer-body div.footer-section.icons .section.socials .icons svg {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.icons
+    .section.socials
+    .icons
+    svg {
     width: 2.5rem;
     height: 2.5rem;
   }
-  footer div.footer-container div.footer-body div.footer-section.icons .section.logo .logo.footer {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.icons
+    .section.logo
+    .logo.footer {
     width: 80px;
     height: auto;
   }
@@ -454,7 +559,11 @@ a:visited {
   footer div.footer-container div.footer-end .footer-end-section {
     margin: 0.75rem 0px;
   }
-  footer div.footer-container div.footer-end .footer-end-section.links .footer-nav {
+  footer
+    div.footer-container
+    div.footer-end
+    .footer-end-section.links
+    .footer-nav {
     padding: 0px 0px;
     list-style: none;
     display: flex;
@@ -466,7 +575,11 @@ a:visited {
     display: flex;
     justify-content: center;
   }
-  footer div.footer-container div.footer-end .footer-end-section.copyright span {
+  footer
+    div.footer-container
+    div.footer-end
+    .footer-end-section.copyright
+    span {
     opacity: 50%;
   }
   footer li a {
@@ -478,7 +591,11 @@ a:visited {
   }
 }
 @media only screen and (min-width: 48em) {
-  footer div.footer-container div.footer-end div.footer-end-section.links ul.footer-nav {
+  footer
+    div.footer-container
+    div.footer-end
+    div.footer-end-section.links
+    ul.footer-nav {
     justify-content: center;
     gap: 1.5rem;
   }
@@ -494,26 +611,55 @@ a:visited {
     flex-direction: row;
     gap: 1rem;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section {
     flex: 1 1 0;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section div.section-title-container {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    div.section-title-container {
     pointer-events: none;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section div.section-title-container svg.icon-tabler-chevron-down {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    div.section-title-container
+    svg.icon-tabler-chevron-down {
     display: none;
   }
-  footer div.footer-container div.footer-body div.footer-section.links div.section ul.section-list {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.links
+    div.section
+    ul.section-list {
     visibility: visible;
     max-height: 200px;
   }
   footer div.footer-container div.footer-body div.footer-section.icons {
     flex-direction: column;
   }
-  footer div.footer-container div.footer-body div.footer-section.icons div.section.socials div.icons {
+  footer
+    div.footer-container
+    div.footer-body
+    div.footer-section.icons
+    div.section.socials
+    div.icons {
     display: flex;
   }
-  footer div.footer-container div.footer-end div.footer-end-section.links ul.footer-nav {
+  footer
+    div.footer-container
+    div.footer-end
+    div.footer-end-section.links
+    ul.footer-nav {
     justify-content: center;
     gap: 2rem;
   }
@@ -590,7 +736,9 @@ a:visited {
     opacity: 0;
     visibility: inherit;
     pointer-events: none;
-    transition: opacity 300ms ease, visibility 100ms linear;
+    transition:
+      opacity 300ms ease,
+      visibility 100ms linear;
   }
   header.main div.container nav.nav-bar div.nav-container {
     visibility: hidden;
@@ -602,14 +750,20 @@ a:visited {
     left: 0;
     z-index: 9999999;
     transform: translateY(-100%);
-    transition: transform 500ms ease 100ms, visibility 500ms linear 100ms;
+    transition:
+      transform 500ms ease 100ms,
+      visibility 500ms linear 100ms;
   }
   header.main div.container nav.nav-bar div.nav-container.active {
     transform: translateY(0);
     visibility: visible;
     transition-delay: 0s;
   }
-  header.main div.container nav.nav-bar div.nav-container.active div.nav-overlay {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container.active
+    div.nav-overlay {
     opacity: 0.25;
     visibility: inherit;
     transition-delay: 0s;
@@ -621,16 +775,31 @@ a:visited {
     position: relative;
     height: 100%;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content .logo-container {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    .logo-container {
     position: absolute;
     bottom: 0;
     transform: translate(-50%, -10%);
     left: 50%;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content button.nav-button {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    button.nav-button {
     grid-column-start: 2;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu {
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -641,57 +810,160 @@ a:visited {
     font-size: 1.5rem;
     padding-left: 0px;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item {
     height: 100%;
     padding-left: 1rem;
     line-height: 3rem;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.home > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.home
+    > a::before {
     background-image: url("public/icons/home.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.shop > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.shop
+    > a::before {
     background-image: url("public/icons/books.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.about > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.about
+    > a::before {
     background-image: url("public/icons/info-circle.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.contact > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.contact
+    > a::before {
     background-image: url("public/icons/message.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.cart > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.cart
+    > a::before {
     background-image: url("public/icons/shopping-cart.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item {
     background: linear-gradient(to left, transparent, #1b1b1b 50%);
     color: #dbbf6a;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item
+    a::before {
     background-image: none;
     background-color: #dbbf6a;
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 2.25rem;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.home > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item.home
+    > a::before {
     mask-image: url("public/icons/home.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.shop > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item.shop
+    > a::before {
     mask-image: url("public/icons/books.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.about > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item.about
+    > a::before {
     mask-image: url("public/icons/info-circle.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.contact > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item.contact
+    > a::before {
     mask-image: url("public/icons/message.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item.cart > a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item.cart
+    > a::before {
     mask-image: url("public/icons/shopping-cart.svg");
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item a {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item
+    a {
     color: inherit;
     display: flex;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item
+    a::before {
     content: " ";
     background-size: 2.25rem;
     background-repeat: no-repeat;
@@ -738,10 +1010,20 @@ a:visited {
     justify-content: center;
     height: unset;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content .logo-container {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    .logo-container {
     display: none;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -750,17 +1032,42 @@ a:visited {
     font-weight: 400;
     list-style: none;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item {
     height: unset;
     padding: unset;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item.current-menu-item {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item.current-menu-item {
     background: none;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item a::before {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item
+    a::before {
     display: none;
   }
-  header.main div.container nav.nav-bar div.nav-container div.nav-content ul.nav-menu li.menu-item {
+  header.main
+    div.container
+    nav.nav-bar
+    div.nav-container
+    div.nav-content
+    ul.nav-menu
+    li.menu-item {
     color: #dbbf6a;
   }
 }
@@ -941,7 +1248,8 @@ main.additional-info section {
 main.additional-info section section {
   border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
 }
-main.additional-info section ul li, main.additional-info section ol li {
+main.additional-info section ul li,
+main.additional-info section ol li {
   margin-bottom: 0.5rem;
 }
 main.additional-info section ol ul {
@@ -957,10 +1265,13 @@ main.additional-info section table {
   border-collapse: collapse;
   text-align: left;
 }
-main.additional-info section table thead, main.additional-info section table tr {
+main.additional-info section table thead,
+main.additional-info section table tr {
   border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
 }
-main.additional-info section table th, main.additional-info section table tr, main.additional-info section table td {
+main.additional-info section table th,
+main.additional-info section table tr,
+main.additional-info section table td {
   padding: 0.5rem 0.5rem;
 }
 main.additional-info section table tbody tr:nth-of-type(odd) {
@@ -985,9 +1296,9 @@ main.additional-info section table tbody tr:nth-of-type(odd) {
   #contact-form .wpcf7-form p {
     margin-bottom: 0.5rem;
   }
-  #contact-form .wpcf7-form input[type=text],
-  #contact-form .wpcf7-form input[type=email],
-  #contact-form .wpcf7-form input[type=tel] {
+  #contact-form .wpcf7-form input[type="text"],
+  #contact-form .wpcf7-form input[type="email"],
+  #contact-form .wpcf7-form input[type="tel"] {
     height: 2rem;
     width: 100%;
     max-width: 250px;
@@ -1036,7 +1347,8 @@ span.irs-to::before {
 .woof_text_search_container.woof_container.woof_container_woof_text {
   overflow: visible !important;
 }
-.woof_text_search_container.woof_container.woof_container_woof_text .woof_husky_txt-input:focus {
+.woof_text_search_container.woof_container.woof_container_woof_text
+  .woof_husky_txt-input:focus {
   outline: 2px solid #dbbf6a;
 }
 
@@ -1117,7 +1429,7 @@ span.irs-to::before {
     font-size: 1.25rem;
   }
   div#shop-container div.woof a.chosen-single,
-  div#shop-container div.woof input[type=search],
+  div#shop-container div.woof input[type="search"],
   div#shop-container div.woof ul.chosen-choices {
     border-radius: 4px;
   }
@@ -1264,17 +1576,31 @@ span.irs-to::before {
     flex-direction: column;
     gap: 1rem;
   }
-  div.woocommerce form.woocommerce-cart-form div.cart-items-container div.cart_item {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.cart-items-container
+    div.cart_item {
     display: flex;
     gap: 0.5rem;
     align-items: center;
     margin-bottom: 1rem;
   }
-  div.woocommerce form.woocommerce-cart-form div.cart-items-container div.cart_item div.product-info div.product-titles {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.cart-items-container
+    div.cart_item
+    div.product-info
+    div.product-titles {
     display: flex;
     gap: 0.5rem;
   }
-  div.woocommerce form.woocommerce-cart-form div.cart-items-container div.cart_item div.product-info div.product-titles .product-name {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.cart-items-container
+    div.cart_item
+    div.product-info
+    div.product-titles
+    .product-name {
     font-size: 18px;
     font-weight: 500;
     text-wrap: nowrap;
@@ -1282,11 +1608,24 @@ span.irs-to::before {
     text-overflow: ellipsis;
     max-width: 6rem;
   }
-  div.woocommerce form.woocommerce-cart-form div.cart-items-container div.cart_item div.product-info div.product-titles div.product-author {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.cart-items-container
+    div.cart_item
+    div.product-info
+    div.product-titles
+    div.product-author {
     display: flex;
     align-items: flex-end;
   }
-  div.woocommerce form.woocommerce-cart-form div.cart-items-container div.cart_item div.product-info div.product-quantity div.quantity input[type=number].qty {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.cart-items-container
+    div.cart_item
+    div.product-info
+    div.product-quantity
+    div.quantity
+    input[type="number"].qty {
     width: 50%;
     max-width: 5rem;
     height: 1.5rem;
@@ -1296,7 +1635,10 @@ span.irs-to::before {
     flex-direction: column;
     gap: 1rem;
   }
-  div.woocommerce form.woocommerce-cart-form div.add-to-cart-wrap .checkout-button.button {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.add-to-cart-wrap
+    .checkout-button.button {
     text-align: center;
     max-width: 750px;
     width: 100%;
@@ -1307,7 +1649,13 @@ span.irs-to::before {
   }
 }
 @media only screen and (min-width: 48em) {
-  div.woocommerce form.woocommerce-cart-form div.cart-items-container div.cart_item div.product-info div.product-titles .product-name {
+  div.woocommerce
+    form.woocommerce-cart-form
+    div.cart-items-container
+    div.cart_item
+    div.product-info
+    div.product-titles
+    .product-name {
     font-size: 18px;
     font-weight: 500;
     max-width: none;
@@ -1353,29 +1701,44 @@ li.product .inner-container a.button {
   text-align: center;
   line-height: 2.5rem;
 }
-li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link {
+li.product
+  .inner-container
+  .woocommerce-LoopProduct-link.woocommerce-loop-product__link {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   flex: 1 1 0;
 }
-li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link img {
+li.product
+  .inner-container
+  .woocommerce-LoopProduct-link.woocommerce-loop-product__link
+  img {
   margin: 0px !important;
   width: 100%;
   height: auto;
 }
-li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link h2 {
+li.product
+  .inner-container
+  .woocommerce-LoopProduct-link.woocommerce-loop-product__link
+  h2 {
   padding-bottom: 0px !important;
   font-weight: 500;
 }
-li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link span.price {
+li.product
+  .inner-container
+  .woocommerce-LoopProduct-link.woocommerce-loop-product__link
+  span.price {
   margin-top: auto;
   margin-bottom: 0.5rem;
   font-size: 1rem;
   color: #1b1b1b;
   opacity: 0.5;
 }
-li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-product__link span.price span {
+li.product
+  .inner-container
+  .woocommerce-LoopProduct-link.woocommerce-loop-product__link
+  span.price
+  span {
   font-size: 1.25rem;
 }
 
@@ -1432,7 +1795,11 @@ li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-produ
   div.product-single div#product-info-container div.product-images div.images {
     max-width: 100vw;
   }
-  div.product-single div#product-info-container div.product-images div.images .nswiper.nickx-slider-nav {
+  div.product-single
+    div#product-info-container
+    div.product-images
+    div.images
+    .nswiper.nickx-slider-nav {
     padding: 10px;
   }
   div.product-single div#product-info-container div.product-info {
@@ -1444,14 +1811,27 @@ li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-produ
   div.product-single div#product-info-container div.product-info p.price {
     font-size: 1.5rem;
   }
-  div.product-single div#product-info-container div.product-info form.cart div.quantity input[type=number].qty {
+  div.product-single
+    div#product-info-container
+    div.product-info
+    form.cart
+    div.quantity
+    input[type="number"].qty {
     width: 4rem;
     height: 2rem;
   }
-  div.product-single div#product-info-container div.product-info form.cart div.quantity {
+  div.product-single
+    div#product-info-container
+    div.product-info
+    form.cart
+    div.quantity {
     margin-bottom: 0.5rem;
   }
-  div.product-single div#product-info-container div.product-info form.cart button.single_add_to_cart_button.button.alt {
+  div.product-single
+    div#product-info-container
+    div.product-info
+    form.cart
+    button.single_add_to_cart_button.button.alt {
     max-width: 750px;
   }
   div.product-single div.product-info-tabs-container {
@@ -1462,27 +1842,51 @@ li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-produ
   div.product-single div.product-info-tabs-container ul.products li.product h2 {
     font-size: 1.5rem;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs #comments {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    #comments {
     margin-bottom: 1rem;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs #review_form_wrapper .comment-form {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    #review_form_wrapper
+    .comment-form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin: 1rem 0px;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars {
     display: inline-flex;
     gap: 0.5rem;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars a {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars
+    a {
     font-size: 0;
     position: relative;
     text-decoration: none;
     display: inline-block;
     line-height: 1;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars a:before {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars
+    a:before {
     content: "\f005";
     font: var(--fa-font-regular);
     font-family: "Font Awesome 7 Free";
@@ -1490,13 +1894,40 @@ li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-produ
     font-size: 1.5rem;
     color: #dbbf6a;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars a.active:before, div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars.selected a.active:before, div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars:hover a:before {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars
+    a.active:before,
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars.selected
+    a.active:before,
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars:hover
+    a:before {
     font: var(--fa-font-solid);
     font-family: "Font Awesome 7 Free";
     font-weight: 900;
     font-size: 1.5rem;
   }
-  div.product-single div.product-info-tabs-container .woocommerce-tabs .comment-form .comment-form-rating .stars:not(.selected) a:hover ~ a:before {
+  div.product-single
+    div.product-info-tabs-container
+    .woocommerce-tabs
+    .comment-form
+    .comment-form-rating
+    .stars:not(.selected)
+    a:hover
+    ~ a:before {
     font: var(--fa-font-regular);
     font-family: "Font Awesome 7 Free";
     font-weight: 400;
@@ -1557,14 +1988,33 @@ li.product .inner-container .woocommerce-LoopProduct-link.woocommerce-loop-produ
 .woocommerce-tabs.wc-tabs-wrapper .tabs.wc-tabs li .woocommerce-Tabs-panel {
   margin: 1rem 0.5rem;
 }
-.woocommerce-tabs.wc-tabs-wrapper .tabs.wc-tabs li .woocommerce-Tabs-panel#tab-author h3 {
+.woocommerce-tabs.wc-tabs-wrapper
+  .tabs.wc-tabs
+  li
+  .woocommerce-Tabs-panel#tab-author
+  h3 {
   margin-top: 0px;
   margin-bottom: 0.5rem;
 }
-.woocommerce-tabs.wc-tabs-wrapper .tabs.wc-tabs li .woocommerce-Tabs-panel#tab-additional_information table {
+.woocommerce-tabs.wc-tabs-wrapper
+  .tabs.wc-tabs
+  li
+  .woocommerce-Tabs-panel#tab-additional_information
+  table {
   border-collapse: collapse;
 }
-.woocommerce-tabs.wc-tabs-wrapper .tabs.wc-tabs li .woocommerce-Tabs-panel#tab-additional_information table th, .woocommerce-tabs.wc-tabs-wrapper .tabs.wc-tabs li .woocommerce-Tabs-panel#tab-additional_information table td {
+.woocommerce-tabs.wc-tabs-wrapper
+  .tabs.wc-tabs
+  li
+  .woocommerce-Tabs-panel#tab-additional_information
+  table
+  th,
+.woocommerce-tabs.wc-tabs-wrapper
+  .tabs.wc-tabs
+  li
+  .woocommerce-Tabs-panel#tab-additional_information
+  table
+  td {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid rgba(27, 27, 27, 0.3137254902);
