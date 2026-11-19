@@ -12,8 +12,10 @@ $terms = get_the_terms( $product -> get_id(), 'artist' );
         foreach ($terms as $key => $term) {
             ?>
             <div class="artist_container" id="artist-container-<?php echo esc_html($term -> slug); ?>">
-                <h3><?php echo esc_html($term -> name); ?></h3>
-                <p><?php echo esc_html($term -> description) ?></p>
+                <h3 style="margin-bottom: 0.5rem;"><?php echo esc_html($term -> name); ?></h3>
+                <div>
+                    <?php echo wp_kses_post( $term -> description ) ?>
+                </div>
             </div>
             <?php
         }
