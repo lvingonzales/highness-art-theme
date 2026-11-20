@@ -144,7 +144,8 @@ function highness_product_info()
     woocommerce_template_single_price();
 
     echo "<div class='currency-notice'>";
-    echo "<p>All prices in Canadian Dollars (CAD) </p>";
+    echo "<p>All prices in Canadian Dollars (CAD) Plus applicable taxes and shipping, calculated at checkout </p>";
+    echo "<p>Estimated delivery: 3-7 business days, shipping may take more time to remote territories."
     echo "</div>";
 
     woocommerce_template_single_add_to_cart();
